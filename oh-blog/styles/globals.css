@@ -6,14 +6,20 @@
     .box-text {
         @apply text-3xl font-bold text-black mb-2;
     }
-  }
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
 
 .back {
     background-color: #fafaf3;
-    padding: 1rem;
+    padding: 2.5rem;
 }
 
 .main {
+    max-width: 85rem;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -22,7 +28,7 @@
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
     grid-auto-columns: 1fr;
     display: grid;
 }
@@ -80,4 +86,60 @@
 .contact {
     grid-area: 3 / 3 / 4 / 4;
     background-color: #ADC4CE;
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .menu-container {
+        grid-template-columns: 1fr 1fr; 
+    }
+    .project{
+        grid-column: span 1;
+    }
+
+    .contact {
+        grid-column: span 1;
+    }
+
+    .skill{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .playground {
+        grid-column: span 1;
+    }
+
+    .experience {
+        grid-row: span 4;
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main {
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .menu-container {
+        grid-template-columns: 1fr; /* Adjust for a single column layout on mobile */
+    }
+
+    .boxes {
+        position: sticky;
+        top: 0;
+        padding: 1rem; /* Add padding for spacing */
+        z-index: 1; /* Ensure it's above other elements */
+    }
+
+    /* Keep the existing styles for specific sections */
+    .about-me,
+    .project,
+    .skill,
+    .playground,
+    .experience,
+    .contact {
+        grid-column: span 12; /* Set each item to span the full width */
+        grid-area: auto;
+    }
 }
