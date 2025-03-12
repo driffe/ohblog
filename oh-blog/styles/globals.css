@@ -115,6 +115,48 @@ body {
     }
 }
 
+.btn-about {
+    background-color: #fff864;
+}
+.btn-about:hover {
+    background-color: #fff864cc;
+}
+
+.btn-project {
+    background-color: #BEADFA;
+}
+.btn-project:hover {
+    background-color: #BEADFAcc;
+}
+
+.btn-skill {
+    background-color: #99BC85;
+}
+.btn-skill:hover {
+    background-color: #99BC85cc;
+}
+
+.btn-playground {
+    background-color: #FF8080;
+}
+.btn-playground:hover {
+    background-color: #FF8080cc;
+}
+
+.btn-experience {
+    background-color: #F69E7B;
+}
+.btn-experience:hover {
+    background-color: #F69E7Bcc;
+}
+
+.btn-contact {
+    background-color: #ADC4CE;
+}
+.btn-contact:hover {
+    background-color: #ADC4CEcc;
+}
+
 @media screen and (max-width: 640px) {
     .main {
         justify-content: center;
