@@ -69,7 +69,7 @@ export default function Projects() {
     {
       title: "Medication Guide",
       description: [
-        "Built a 'Medication Guide' web application, winning the 'Best Use of Perplexity/Sonar' award at the 'Build with AI: HackHayward' Hackathon among about 40 teams.",
+        "Built Medicine recommendation Web App based on user's information, winning the 'Best Use of Perplexity/Sonar' award at the 'Build with AI: HackHayward' Hackathon.",
       ],
       demoLink: "https://medication-recommend.vercel.app/", 
       codeLink: "https://github.com/driffe/Medication-Recommend",
