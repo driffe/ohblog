@@ -113,7 +113,7 @@ export default function Projects() {
     {
       title: "Reaction Time Test",
       description: [
-        "A reaction time test is an online activity that measures how quickly you respond to visual cues by clicking when prompted, with results displayed in milliseconds. "
+        "A reaction time test that measures how quickly you respond to visual cues by clicking when prompted, with results displayed in milliseconds. "
       ],
       demoLink: "https://chromewebstore.google.com/detail/%EB%B0%98%EC%9D%91%EC%86%8D%EB%8F%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/oefdnnlfjgoagefgnhfhffjgdbgipoin", 
       codeLink: "https://github.com/driffe/Reaction_Time_Test",
