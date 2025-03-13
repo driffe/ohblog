@@ -34,19 +34,19 @@ export default function Contact() {
     {
       icon: <FaEnvelope />,
       label: 'Email',
-      href: 'mailto:your.email@example.com', // Replace with your email
+      href: 'mailto:syoh2k@gmail.com', 
       color: 'bg-blue-500 hover:bg-blue-600'
     },
     {
       icon: <FaLinkedin />,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/yourprofile', // Replace with your LinkedIn profile
+      href: 'https://linkedin.com/in/syoh2k', 
       color: 'bg-blue-700 hover:bg-blue-800'
     },
     {
       icon: <FaGithub />,
       label: 'GitHub',
-      href: 'https://github.com/driffe', // Your GitHub profile
+      href: 'https://github.com/driffe',
       color: 'bg-gray-800 hover:bg-gray-900'
     }
   ];
@@ -88,6 +88,9 @@ export default function Contact() {
             I'm currently open to new opportunities and collaborations.
             Feel free to reach out if you'd like to discuss potential projects or just want to say hello!
           </p>
+          <p className="text-lg">
+            Looking for Summer Internship 2025, Spring Full-time 2026
+          </p>
         </div>
 
         {/* Navigation to Other Sections */}
@@ -96,7 +99,12 @@ export default function Contact() {
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
                     About Me
                 </button>
-            </Link>  
+            </Link>
+            <Link href="/content/skills">
+            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
+              Skills
+            </button>
+          </Link>  
           <Link href="/content/experiences">
             <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
               Experiences

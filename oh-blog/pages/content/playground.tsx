@@ -27,21 +27,19 @@ const HobbyCard = ({ icon, title, description }: HobbyCardProps) => {
 interface AwardCardProps {
   title: string;
   year: string;
-  description: string;
 }
 
-const AwardCard = ({ title, year, description }: AwardCardProps) => {
+const AwardCard = ({ title, year }: AwardCardProps) => {
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 flex items-start gap-4">
       <div className="text-3xl text-yellow-500 mt-1">
         <FaTrophy />
       </div>
-      <div>
+      <div className="flex-1">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1">
-          <h3 className="text-xl font-bold">{title}</h3>
-          <span className="text-gray-600 text-sm">{year}</span>
+          <h3 className="text-xl font-bold mb-1 sm:mb-0">{title}</h3>
+          <span className="text-gray-600 text-sm bg-gray-100 px-3 py-1 rounded-full">{year}</span>
         </div>
-        <p className="text-gray-700">{description}</p>
       </div>
     </div>
   );
@@ -50,19 +48,9 @@ const AwardCard = ({ title, year, description }: AwardCardProps) => {
 export default function Playground() {
   const hobbies = [
     {
-      icon: <FaBasketballBall className="text-orange-500" />,
-      title: "Basketball",
-      description: "I enjoy playing basketball in my free time. It's a great way to stay active and work as part of a team."
-    },
-    {
       icon: <FaBowlingBall className="text-blue-600" />,
       title: "Bowling",
       description: "Bowling is one of my favorite weekend activities. I enjoy the precision and focus it requires."
-    },
-    {
-      icon: <FaSwimmer className="text-blue-400" />,
-      title: "Swimming",
-      description: "Swimming helps me stay fit and clear my mind. I try to swim regularly to maintain physical health."
     },
     {
       icon: <FaKeyboard className="text-gray-700" />,
@@ -78,19 +66,17 @@ export default function Playground() {
 
   const awards = [
     {
-      title: "Basketball Tournament Champion",
-      year: "2023",
-      description: "First place in the local community basketball tournament."
-    },
-    {
-      title: "Bowling Championship",
+      title: "Top 5 on Morgan Hill Bowling Tournament ",
       year: "2024",
-      description: "Won the regional bowling championship with an average score of 220."
     },
     {
-      title: "Swimming Competition",
-      year: "2022",
-      description: "Received a medal in the 100m freestyle swimming competition at university level."
+      title: "Top 3 in the University-Hosted High School League Competition",
+      year: "2017",
+
+    },
+    {
+      title: "Top 3 on West County Middle School League in Seoul",
+      year: "2015",
     }
   ];
 
@@ -111,7 +97,7 @@ export default function Playground() {
 
       <div className="max-w-4xl mx-auto">
         {/* Hobbies Section */}
-        <div className="bg-pink-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-red-200 rounded-3xl p-8 mb-8 shadow-xl">
           <h2 className="text-3xl font-bold mb-6">Hobbies & Interests</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hobbies.map((hobby, index) => (
@@ -123,7 +109,22 @@ export default function Playground() {
               />
             ))}
           </div>
+          {/* Portfolio Button */}
+          <div className="flex justify-center mt-8">
+            <a 
+              href="https://www.instagram.com/dancing_bottle/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-red-500 font-bold px-6 py-3 rounded-full shadow-md transition-all hover:shadow-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              View My Works
+            </a>
+          </div>
         </div>
+
 
         {/* Awards Section */}
         <div className="bg-yellow-200 rounded-3xl p-8 shadow-xl">
@@ -134,7 +135,6 @@ export default function Playground() {
                 key={index}
                 title={award.title}
                 year={award.year}
-                description={award.description}
               />
             ))}
           </div>
@@ -147,6 +147,11 @@ export default function Playground() {
                     About Me
                 </button>
             </Link>  
+            <Link href="/content/skills">
+            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
+              Skills
+            </button>
+          </Link>
           <Link href="/content/experiences">
             <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
               Experiences

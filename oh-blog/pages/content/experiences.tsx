@@ -130,7 +130,12 @@ export default function Experiences() {
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
                     About Me
                 </button>
-            </Link>  
+            </Link>
+            <Link href="/content/skills">
+            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
+              Skills
+            </button>
+          </Link>  
           <Link href="/content/projects">
             <button className="btn-project px-6 py-3 rounded-full font-bold shadow-md">
               Projects

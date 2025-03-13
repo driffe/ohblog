@@ -24,7 +24,6 @@ export default function Home() {
                 <p>I'm Seyoung Oh from South Korea, majoring in Software Engineering.</p>
               </div>
             </a>
-            {/* Profile content goes here */}
           </div>
 
           {/* Skills */}
@@ -32,10 +31,9 @@ export default function Home() {
             <a href='./content/skills' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                   <h2 className="box-text">Skills</h2>
-                  <p></p>
+                  <p>Technical Skills.</p>
               </div>            
             </a>
-            {/* Skills content goes here */}
           </div>
 
           {/* Experiences */}
@@ -46,7 +44,6 @@ export default function Home() {
                 <p>Oh my experiences.</p>
               </div>
             </a>
-            {/* Experiences content goes here */}
           </div>
 
           {/* Projects */}
@@ -57,7 +54,6 @@ export default function Home() {
                 <p>Feel free to enter and review my projects.</p>
               </div>
             </a>
-            {/* Projects content goes here */}
           </div>
 
           {/* playground */}
@@ -68,7 +64,6 @@ export default function Home() {
                 <p>Explore my areas of interest.</p>
               </div>
             </a>
-            {/* Projects content goes here */}
           </div>
 
           {/* Contacts */}
@@ -76,7 +71,6 @@ export default function Home() {
             <a href='./content/contact' className='h-full w-full'>
               <h2 className="box-text">Contact Me</h2>
             </a>
-            {/* Contacts content goes here */}
           </div>
 
         </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { Kalam } from 'next/font/google';
-import { FaJava, FaPython, FaHtml5, FaJs, FaPhp, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiCplusplus, SiC, SiFirebase, SiMysql, SiReact, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { FaJava, FaPython, FaHtml5, FaJs, FaPhp, FaDatabase, FaNodeJs, FaGithub  } from 'react-icons/fa';
+import { SiTypescript, SiCplusplus, SiC, SiFirebase, SiMysql, SiReact, SiNextdotjs, SiTailwindcss, SiRacket, SiPandas, SiNumpy, SiFastapi, SiPlotly } from 'react-icons/si';
+import { BiLogoSpringBoot } from "react-icons/bi";
 
 const kalam = Kalam({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function Skills() {
             <SkillIcon icon={<SiTypescript />} name="TypeScript" />
             <SkillIcon icon={<FaDatabase />} name="SQL" />
             <SkillIcon icon={<FaHtml5 />} name="HTML" />
+            <SkillIcon icon={<SiRacket />} name="Racket" />
             <SkillIcon icon={<FaPhp />} name="PHP" />
           </div>
         </div>
@@ -60,11 +62,16 @@ export default function Skills() {
         <div className="bg-blue-200 rounded-3xl p-8 shadow-xl">
           <h2 className="text-3xl font-bold mb-6">Technologies & Frameworks</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<SiReact />} name="React" />
+            <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" />
             <SkillIcon icon={<SiNextdotjs />} name="Next.js" />
-            <SkillIcon icon={<SiFirebase />} name="Firebase" />
+            <SkillIcon icon={<FaNodeJs />} name="Node.js" />
             <SkillIcon icon={<SiMysql />} name="MySQL" />
-            <SkillIcon icon={<SiTailwindcss />} name="TailwindCSS" />
+            <SkillIcon icon={<SiFirebase />} name="Firebase" />
+            <SkillIcon icon={<SiFastapi />} name="Fast API" />
+            <SkillIcon icon={<SiPandas />} name="Panda" />
+            <SkillIcon icon={<SiNumpy />} name="Numpy" />
+            <SkillIcon icon={<SiPlotly />} name="Plotly" />
+            <SkillIcon icon={<FaGithub />} name="Github" />
           </div>
         </div>
 

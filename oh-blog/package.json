@@ -9,19 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.1.0",
+    "next": "^14.2.24",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "20.17.24",
+    "@types/react": "18.3.18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
+    "typescript": "5.8.2",
     "windicss": "^3.5.6"
   }
 }

@@ -74,17 +74,16 @@ export default function Projects() {
         "Built a 'Medication Guide' web application, winning the 'Best Use of Perplexity/Sonar' award at the 'Build with AI: HackHayward' Hackathon among about 40 teams.",
         "Implemented full-stack architecture using vanilla JavaScript, HTML/CSS for frontend, Python FastAPI for backend, integrating Perplexity AI API for medication recommendations and Google Places API for pharmacy location services."
       ],
-      demoLink: "https://medication-guide-demo.vercel.app", // Replace with actual link
-      codeLink: "https://github.com/driffe/medication-guide", // Replace with actual link
-      technologies: ["JavaScript", "HTML/CSS", "Python", "FastAPI", "Perplexity AI API", "Google Places API"]
+      demoLink: "https://medication-recommend.vercel.app/", 
+      codeLink: "https://github.com/driffe/Medication-Recommend",
+      technologies: ["JavaScript", "HTML/CSS", "Python", "FastAPI", "Perplexity AI API", "Google Places API", "Vercel"]
     },
     {
       title: "Event Management System",
       description: [
         "Built an event management system utilizing SQL database, and engineering backend infrastructure with Spring Boot and JDBC template to implement CRUD operations for event scheduling and ticket system."
       ],
-      demoLink: "https://event-system-demo.vercel.app", // Replace with actual link
-      codeLink: "https://github.com/driffe/event-management", // Replace with actual link
+      codeLink: "https://github.com/driffe/SJSU_Event",
       technologies: ["Java", "Spring Boot", "SQL", "JDBC", "RESTful API"]
     },
     {
@@ -92,10 +91,37 @@ export default function Projects() {
       description: [
         "Built a personalized expense manager in Next.js to gain hands-on experience with NOSQL databases, successfully implementing secure OAuth authentication flow and designing Firestore database schema with security rules."
       ],
-      demoLink: "https://money-tracker-demo.vercel.app", // Replace with actual link
-      codeLink: "https://github.com/driffe/money-tracker", // Replace with actual link
-      technologies: ["Next.js", "React", "Firebase", "Firestore", "OAuth", "TailwindCSS"]
-    }
+      demoLink: "https://army-money-tracker.vercel.app/", 
+      codeLink: "https://github.com/driffe/Army",
+      technologies: ["Next.js", "TypeScript", "Firebase", "OAuth", "TailwindCSS", "Vercel"]
+    },
+    {
+      title: "Weather App",
+      description: [
+        "Simple Weather app with KR/EN Version using OpenWeatherMap api"
+      ],
+      demoLink: "https://chromewebstore.google.com/detail/moon-phase-timer/kkiikiidimhmaenmpdpfgkhoahkccjhm", 
+      codeLink: "https://github.com/driffe/weatherApp",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS", "PWA" ,"Vercel"]
+    },
+    {
+      title: "Moon Timer",
+      description: [
+        "A minimal timer that allows you to measure time while watching an animation of the moon "
+      ],
+      demoLink: "https://weather-app-seyoungohs-projects.vercel.app/", 
+      codeLink: "https://github.com/driffe/Moon-Timer",
+      technologies: ["Next.js", "JavaScirpt", "TailwindCSS", "Google Extension App"]
+    },
+    {
+      title: "Reaction Time Test",
+      description: [
+        "A reaction time test is an online activity that measures how quickly you respond to visual cues by clicking when prompted, with results displayed in milliseconds. "
+      ],
+      demoLink: "https://chromewebstore.google.com/detail/%EB%B0%98%EC%9D%91%EC%86%8D%EB%8F%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/oefdnnlfjgoagefgnhfhffjgdbgipoin", 
+      codeLink: "https://github.com/driffe/Reaction_Time_Test",
+      technologies: ["JavaScript", "HTML/CSS", "Google Extension App"]
+    },
   ];
 
   return (
@@ -150,6 +176,11 @@ export default function Projects() {
                     About Me
                 </button>
             </Link>  
+            <Link href="/content/skills">
+            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
+              Skills
+            </button>
+          </Link>
           <Link href="/content/experiences">
             <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
               Experiences
