@@ -17,6 +17,9 @@ body {
     background-color: #fafaf3;
     padding: 2.5rem;
 }
+.bg-color {
+    background-color: #fafaf3;
+}
 
 .main {
     max-width: 85rem;
@@ -89,6 +92,22 @@ body {
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
+
+      /* 텍스트 최적화 */
+    .text-sm, .text-base {
+        line-height: 1.6;
+    }
+    
+    /* 목록 스타일 개선 */
+    ul.list-disc li {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* 텍스트 줄바꿈 최적화 */
+    .break-words {
+        word-break: break-word;
+        hyphens: auto;
+    }
     .menu-container {
         grid-template-columns: 1fr 1fr; 
     }

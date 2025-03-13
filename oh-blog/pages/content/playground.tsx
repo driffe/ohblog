@@ -31,7 +31,7 @@ interface AwardCardProps {
 
 const AwardCard = ({ title, year }: AwardCardProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 flex items-start gap-4">
+    <div className="bg-color rounded-xl shadow-lg p-6 flex items-start gap-4">
       <div className="text-3xl text-yellow-500 mt-1">
         <FaTrophy />
       </div>
@@ -115,7 +115,7 @@ export default function Playground() {
               href="https://www.instagram.com/dancing_bottle/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-red-500 font-bold px-6 py-3 rounded-full shadow-md transition-all hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-2 bg-color hover:bg-gray-100 text-red-500 font-bold px-6 py-3 rounded-full shadow-md transition-all hover:shadow-lg"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />

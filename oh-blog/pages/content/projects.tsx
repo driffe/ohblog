@@ -18,36 +18,36 @@ interface ProjectProps {
 
 const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: ProjectProps) => {
   return (
-    <div className="back rounded-xl shadow-lg p-6 mb-8">
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
+    <div className="bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+      <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">{title}</h3>
       
       {/* Technologies used */}
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
         {technologies.map((tech, index) => (
-          <span key={index} className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+          <span key={index} className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
             {tech}
           </span>
         ))}
       </div>
       
       {/* Description points */}
-      <ul className="list-disc ml-5 space-y-2 mb-6">
+      <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base mb-4 sm:mb-6">
         {description.map((point, index) => (
-          <li key={index} className="text-gray-700">{point}</li>
+          <li key={index} className="text-gray-700 pb-1 break-words">{point}</li>
         ))}
       </ul>
       
       {/* Links */}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2 sm:gap-3">
         {demoLink && (
           <a 
             href={demoLink} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2"
+            className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center gap-1 sm:gap-2"
           >
-            <FaExternalLinkAlt />
-            Live Demo
+            <FaExternalLinkAlt size={12} />
+            Demo
           </a>
         )}
         {codeLink && (
@@ -55,10 +55,10 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
             href={codeLink} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-full flex items-center gap-2"
+            className="bg-gray-700 hover:bg-gray-800 text-white text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center gap-1 sm:gap-2"
           >
-            <FaGithub />
-            View Code
+            <FaGithub size={12} />
+            Code
           </a>
         )}
       </div>
@@ -72,7 +72,6 @@ export default function Projects() {
       title: "Medication Guide",
       description: [
         "Built a 'Medication Guide' web application, winning the 'Best Use of Perplexity/Sonar' award at the 'Build with AI: HackHayward' Hackathon among about 40 teams.",
-        "Implemented full-stack architecture using vanilla JavaScript, HTML/CSS for frontend, Python FastAPI for backend, integrating Perplexity AI API for medication recommendations and Google Places API for pharmacy location services."
       ],
       demoLink: "https://medication-recommend.vercel.app/", 
       codeLink: "https://github.com/driffe/Medication-Recommend",

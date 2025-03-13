@@ -17,16 +17,18 @@ interface ExperienceProps {
 
 const ExperienceCard = ({ title, company, location, period, responsibilities }: ExperienceProps) => {
   return (
-    <div className="back rounded-xl shadow-lg p-6 mb-8">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-        <h3 className="text-xl font-bold">{title}</h3>
-        <span className="text-gray-600 text-sm">{period}</span>
+    <div className="bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+      <div className="flex flex-col mb-2">
+        <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+          <p className="font-medium">{company}</p>
+          <span className="text-gray-600 text-sm">{period}</span>
+        </div>
+        <p className="text-gray-600 italic text-sm mb-3">{location}</p>
       </div>
-      <p className="font-medium mb-1">{company}</p>
-      <p className="text-gray-600 italic mb-4">{location}</p>
-      <ul className="list-disc ml-5 space-y-2">
+      <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base">
         {responsibilities.map((responsibility, index) => (
-          <li key={index} className="text-gray-700">{responsibility}</li>
+          <li key={index} className="text-gray-700 pb-1 break-words">{responsibility}</li>
         ))}
       </ul>
     </div>
