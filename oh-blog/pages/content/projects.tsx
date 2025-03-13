@@ -18,11 +18,10 @@ interface ProjectProps {
 
 const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: ProjectProps) => {
   return (
-    <div className="bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8">
-      <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">{title}</h3>
+    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+      <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-center sm:text-left">{title}</h3>
       
-      {/* Technologies used */}
-      <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+      <div className="flex flex-wrap justify-center sm:justify-start gap-1 sm:gap-2 mb-3 sm:mb-4">
         {technologies.map((tech, index) => (
           <span key={index} className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
             {tech}
@@ -37,8 +36,7 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
         ))}
       </ul>
       
-      {/* Links */}
-      <div className="flex flex-wrap gap-2 sm:gap-3">
+      <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
         {demoLink && (
           <a 
             href={demoLink} 
@@ -75,7 +73,7 @@ export default function Projects() {
       ],
       demoLink: "https://medication-recommend.vercel.app/", 
       codeLink: "https://github.com/driffe/Medication-Recommend",
-      technologies: ["JavaScript", "HTML/CSS", "Python", "FastAPI", "Perplexity AI API", "Google Places API", "Vercel"]
+      technologies: [ "Python", "FastAPI", "JavaScript", "HTML/CSS", "Perplexity AI API", "Google Places API", "Vercel"]
     },
     {
       title: "Event Management System",
