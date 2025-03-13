@@ -70,12 +70,12 @@ export default function Playground() {
       year: "2024",
     },
     {
-      title: "Top 3 in the University-Hosted High School League Competition",
+      title: "Top 3 in the University-Hosted High School Basketball League",
       year: "2017",
 
     },
     {
-      title: "Top 3 on West County Middle School League in Seoul",
+      title: "Top 3 on West County Middle School Basketball League in Seoul",
       year: "2015",
     }
   ];
