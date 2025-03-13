@@ -21,7 +21,7 @@ export default function Home() {
             <a href='./content/about' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                 <h2 className="box-text">About Me</h2>
-                <p>I'm Seyoung Oh from South Korea, majoring in Software Engineering.</p>
+                <p>I'm Seyoung Oh from South Korea, majoring in Software Engineering</p>
               </div>
             </a>
           </div>
@@ -31,7 +31,7 @@ export default function Home() {
             <a href='./content/skills' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                   <h2 className="box-text">Skills</h2>
-                  <p>Technical Skills.</p>
+                  <p>Technical Skills</p>
               </div>            
             </a>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
             <a href='./content/experiences' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                 <h2 className="box-text">Experiences</h2>
-                <p>Oh my experiences.</p>
+                <p>Oh my experiences</p>
               </div>
             </a>
           </div>
@@ -51,7 +51,7 @@ export default function Home() {
             <a href='./content/projects' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                 <h2 className="box-text">Projects</h2>
-                <p>Feel free to enter and review my projects.</p>
+                <p>Feel free to enter and review my projects</p>
               </div>
             </a>
           </div>
@@ -61,7 +61,7 @@ export default function Home() {
             <a href='./content/playground' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                 <h2 className="box-text">Playground</h2>
-                <p>Explore my areas of interest.</p>
+                <p>Explore my areas of interest</p>
               </div>
             </a>
           </div>

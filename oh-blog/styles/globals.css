@@ -183,24 +183,23 @@ body {
     }
 
     .menu-container {
-        grid-template-columns: 1fr; /* Adjust for a single column layout on mobile */
+        grid-template-columns: 1fr; 
     }
 
     .boxes {
         position: sticky;
         top: 0;
-        padding: 1rem; /* Add padding for spacing */
-        z-index: 1; /* Ensure it's above other elements */
+        padding: 1rem; 
+        z-index: 1; 
     }
 
-    /* Keep the existing styles for specific sections */
     .about-me,
     .project,
     .skill,
     .playground,
     .experience,
     .contact {
-        grid-column: span 12; /* Set each item to span the full width */
+        grid-column: span 12; 
         grid-area: auto;
     }
 }

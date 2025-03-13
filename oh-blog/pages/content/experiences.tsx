@@ -118,7 +118,7 @@ export default function Experiences() {
           <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
           <ul className="space-y-4 list-disc ml-6">
             <li className="pl-2">
-              <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025
+              <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025 
             </li>
             <li className="pl-2">
               <span className="font-semibold">III Corps Commanding General's Commendation</span> – ROK-U.S. Joint Military Exercise Freedom Shield 2024
