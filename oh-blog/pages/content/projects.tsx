@@ -97,7 +97,7 @@ export default function Projects() {
       description: [
         "Simple Weather app with KR/EN Version using OpenWeatherMap api"
       ],
-      demoLink: "https://chromewebstore.google.com/detail/moon-phase-timer/kkiikiidimhmaenmpdpfgkhoahkccjhm", 
+      demoLink: "https://weather-app-seyoungohs-projects.vercel.app/", 
       codeLink: "https://github.com/driffe/weatherApp",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "PWA" ,"Vercel"]
     },
@@ -106,7 +106,7 @@ export default function Projects() {
       description: [
         "A minimal timer that allows you to measure time while watching an animation of the moon "
       ],
-      demoLink: "https://weather-app-seyoungohs-projects.vercel.app/", 
+      demoLink: "https://chromewebstore.google.com/detail/moon-phase-timer/kkiikiidimhmaenmpdpfgkhoahkccjhm", 
       codeLink: "https://github.com/driffe/Moon-Timer",
       technologies: ["Next.js", "JavaScirpt", "TailwindCSS", "Google Extension App"]
     },
