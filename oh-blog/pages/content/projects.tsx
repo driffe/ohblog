@@ -67,11 +67,19 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
 export default function Projects() {
   const projects = [
     {
-      title: "Medication Guide",
+      title: "Autowise",
+      description: [
+        "Built AI-powered car maintenance app, winning 5th award at the 'SpartUp' Hackathon within 4hours.",
+      ],
+      demoLink: "https://visionary-squirrel-309b11.netlify.app//", 
+      technologies: [ "NextJS", "Typescript", "JavaScript", "HTML/CSS", "Perplexity AI API", "Mapbox API", "Netlify"]
+    },
+    {
+      title: "Meditrek",
       description: [
         "Built Medicine recommendation Web App based on user's information, winning the 'Best Use of Perplexity/Sonar' award at the 'Build with AI: HackHayward' Hackathon.",
       ],
-      demoLink: "https://medication-recommend.vercel.app/", 
+      demoLink: "https://meditrek.vercel.app/", 
       codeLink: "https://github.com/driffe/Medication-Recommend",
       technologies: [ "Python", "FastAPI", "JavaScript", "HTML/CSS", "Perplexity AI API", "Google Places API", "Vercel"]
     },
@@ -100,6 +108,15 @@ export default function Projects() {
       demoLink: "https://weather-app-seyoungohs-projects.vercel.app/", 
       codeLink: "https://github.com/driffe/weatherApp",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "PWA" ,"Vercel"]
+    },
+    {
+      title: "De Anza College Rate My Profs",
+      description: [
+        "Chrome extension that instantly displays professor ratings, class difficulty levels, and would take again percentages when highlighting any professor's name on webpages "
+      ],
+      demoLink: "https://chromewebstore.google.com/detail/de-anza-professor-info-vi/omielgfjgpilflimpdbmnppkfbknaogd", 
+      codeLink: "https://github.com/driffe/Rate-my-profs",
+      technologies: ["JavaScript", "HTML/CSS", "Python", "Selenium", "Google Extension App"]
     },
     {
       title: "Moon Timer",

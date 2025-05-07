@@ -38,7 +38,7 @@ const ExperienceCard = ({ title, company, location, period, responsibilities }: 
 export default function Experiences() {
   const experiences = [
     {
-      title: "Field Application Engineer",
+      title: "Application Engineer",
       company: "JKI INC",
       location: "Campbell, CA",
       period: "Sep 2024 - Jan 2025",
@@ -50,12 +50,13 @@ export default function Experiences() {
       ]
     },
     {
-      title: "Private Programming Tutor",
-      company: "Self-Employed",
-      location: "Yongin-si, South Korea",
+      title: "Programming Tutor",
+      company: "Kim Study",
+      location: "Seoul, South Korea",
       period: "Apr 2024 - July 2024",
       responsibilities: [
-        "Mentored students to get basic coding skills (Micro:bit coding, Python, and Java) and logical thinking abilities, resulting in one of the students gaining acceptance into the Gifted and Talented Education Program."
+        "Mentored students in programming, including block coding, Python, and Java, through personalized instruction.",
+        "Guided one student to successful acceptance into the Gifted and Talented Education Program through a comprehensive curriculum focusing on both creative and practical Micro:bit projects"
       ]
     },
     {
@@ -71,7 +72,7 @@ export default function Experiences() {
       ]
     },
     {
-      title: "Software Engineer Intern",
+      title: "Data Engineer Intern",
       company: "JKI INC",
       location: "Yongin-si, South Korea",
       period: "Jul 2022 - Sep 2022",
@@ -117,6 +118,12 @@ export default function Experiences() {
         <div className="bg-blue-200 rounded-3xl p-8 shadow-xl">
           <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
           <ul className="space-y-4 list-disc ml-6">
+            <li className="pl-2">
+              <span className="font-semibold">Certificate Of Achievement</span> – SpartUp Hackathon 2025 
+            </li>
+            <li className="pl-2">
+              <span className="font-semibold">Placed Top 10</span> – SpartUp × SBDC Pitch Jam 2025 
+            </li>
             <li className="pl-2">
               <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025 
             </li>

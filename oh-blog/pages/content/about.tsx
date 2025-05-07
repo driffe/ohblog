@@ -66,7 +66,7 @@ export default function About() {
               <h3 className="font-semibold text-xl mb-4">Resume Focused on SW</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
-                  href="/SeyoungOh(SW)_Resume(Final).pdf" 
+                  href="/SeyoungOh(ALL)_Resume.pdf" 
                   download 
                   className="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors font-medium text-center"
                 >
@@ -76,7 +76,7 @@ export default function About() {
                   Download Resume
                 </a>
                 <a 
-                  href="/SeyoungOh(SW)_Resume(Final).pdf" 
+                  href="/SeyoungOh(ALL)_Resume.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition-colors font-medium text-center"
@@ -94,7 +94,7 @@ export default function About() {
               <h3 className="font-semibold text-xl mb-4">Resume Focused on IT</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
-                  href="/SeyoungOh(IT)_Resume(Final).pdf" 
+                  href="/SeyoungOh(Tech)_Resume.pdf" 
                   download 
                   className="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors font-medium text-center"
                 >
@@ -104,7 +104,7 @@ export default function About() {
                   Download Resume
                 </a>
                 <a 
-                  href="/SeyoungOh(IT)_Resume(Final).pdf" 
+                  href="/SeyoungOh(Tech)_Resume.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition-colors font-medium text-center"
