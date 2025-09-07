@@ -38,15 +38,23 @@ const ExperienceCard = ({ title, company, location, period, responsibilities }: 
 export default function Experiences() {
   const experiences = [
     {
+      title: "Software Engineering Intern",
+      company: "KQED",
+      location: "San Francisco, CA",
+      period: "Jul 2024 - Present",
+      responsibilities: [
+        "Reduced API surface area by 27% through systematic audits and deprecation of unused endpoints in Spring Boot(Webflux) and MongoDB/firebase within a microservices architecture (MSA) environment on Docker/GCP.",
+        "Improved developer build times by 55% through resolving IntelliJ configuration issues, enabling local development and documenting solutions for team productivity."
+      ]
+    },
+    {
       title: "Application Engineer",
       company: "JKI INC",
       location: "Campbell, CA",
       period: "Sep 2024 - Jan 2025",
       responsibilities: [
-        "Implemented a Shmoo testing framework of Erase Operation in C++ to verify performance against vendor datasheet.",
-        "Utilized the Program and Read operations for precise performance verification, identifying 17% more VCC power operational margin than documented in the vendor's datasheet specifications.",
-        "Reconstructed memory operation timing to align with the vendor-specific NAND flash specification.",
-        "Implemented missing timing operations and optimized existing ones by reducing them up to 50% based on the vendor's datasheet, achieving 80% alignment with the timing and operation patterns specified in the vendor's datasheet."
+        "Designed and implemented a Shmoo testing framework in C++ for NAND flash memory validation, automating voltage and timing parameter analysis against vendor specifications.",
+        "Discovered an additional 17% VCC power margin through systematic performance validation, enabling broader operational stability and extending device lifespan under varying power conditions."
       ]
     },
     {
@@ -77,8 +85,8 @@ export default function Experiences() {
       location: "Yongin-si, South Korea",
       period: "Jul 2022 - Sep 2022",
       responsibilities: [
-        "Implemented temperature analysis and visualization program to analyze temperature in Burn-in boards.",
-        "Engineered automated data processing pipeline and frame using Python (NumPy, Pandas) to scrape, clean, and analyze log data across multiple Burn-in boards and implemented an interactive visualization system with Plotly, successfully handling and analyzing over 10,000 log entries."
+        "Built an interactive temperature monitoring dashboard using Plotly Python to analyze post-testing log data, enabling efficient identification of thermal anomalies and reducing debugging time by 80%.",
+        "Developed and automated a robust data pipeline with NumPy and Pandas, cleaning and analyzing 10K+ log entries."
       ]
     }
   ];

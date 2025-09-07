@@ -85,11 +85,10 @@ export default function Contact() {
         <div className="bg-blue-200 rounded-3xl p-8 shadow-xl text-center">
           <h2 className="text-3xl font-bold mb-4">Let's Connect!</h2>
           <p className="text-lg">
-            I'm currently open to new opportunities and collaborations.
-            Feel free to reach out if you'd like to discuss potential projects or just want to say hello!
+            I'm open to new opportunities and collaborations! Feel free to reach out to discuss potential projects, job opportunities, or simply to connect. I'd love to hear from you!
           </p>
           <p className="text-lg">
-            Looking for Summer Internship 2025, Spring Full-time 2026
+            🎓 Graduating December 2025 | Seeking Full-time Opportunities Starting 2026
           </p>
         </div>
 

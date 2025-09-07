@@ -41,7 +41,7 @@ export default function Home() {
             <a href='./content/experiences' className='h-full w-full'>
               <div className='flex flex-col justify-between h-full'>
                 <h2 className="box-text">Experiences</h2>
-                <p>Oh my experiences</p>
+                <p>Oh! my experiences</p>
               </div>
             </a>
           </div>

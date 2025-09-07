@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Kalam } from 'next/font/google';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const kalam = Kalam({
   subsets: ["latin"],
@@ -11,8 +11,16 @@ const kalam = Kalam({
 interface ProjectProps {
   title: string;
   description: string[];
-  demoLink?: string; // Optional
-  codeLink?: string; // Optional
+  demoLink?: string;
+  codeLink?: string;
+  technologies: string[];
+}
+
+interface ExtensionProjectProps {
+  title: string;
+  description: string[];
+  demoLink?: string;
+  codeLink?: string;
   technologies: string[];
 }
 
@@ -29,7 +37,6 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
         ))}
       </div>
       
-      {/* Description points */}
       <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base mb-4 sm:mb-6">
         {description.map((point, index) => (
           <li key={index} className="text-gray-700 pb-1 break-words">{point}</li>
@@ -64,8 +71,114 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
   );
 };
 
+const ExtensionProjectCard = ({ title, description, demoLink, codeLink, technologies }: ExtensionProjectProps) => {
+  return (
+    <div className="bg-gray-50 rounded-lg shadow-md p-4 mb-4 ml-4">
+      <h4 className="text-md sm:text-lg font-semibold mb-2">{title}</h4>
+      
+      <div className="flex flex-wrap gap-1 mb-2">
+        {technologies.filter(tech => tech !== "Google Extension App").map((tech, index) => (
+          <span key={index} className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
+            {tech}
+          </span>
+        ))}
+      </div>
+      
+      <ul className="list-disc pl-4 space-y-1 text-sm mb-3">
+        {description.map((point, index) => (
+          <li key={index} className="text-gray-600">{point}</li>
+        ))}
+      </ul>
+      
+      <div className="flex gap-2">
+        {demoLink && (
+          <a 
+            href={demoLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded-full flex items-center gap-1"
+          >
+            <FaExternalLinkAlt size={10} />
+            Demo
+          </a>
+        )}
+        {codeLink && (
+          <a 
+            href={codeLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-gray-700 hover:bg-gray-800 text-white text-xs px-3 py-1 rounded-full flex items-center gap-1"
+          >
+            <FaGithub size={10} />
+            Code
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const ChromeExtensionGroup = ({ extensions }: { extensions: ExtensionProjectProps[] }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+      <div>
+        <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Chrome Extension Suite</h3>
+        <div className="flex flex-wrap gap-1 sm:gap-2 mb-3">
+          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
+            JavaScript
+          </span>
+          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
+            HTML/CSS
+          </span>
+          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
+            Chrome Extensions
+          </span>
+        </div>
+        <p className="text-gray-700 text-sm sm:text-base mb-4">
+          A collection of {extensions.length} Chrome extensions with 25+ downloading.
+        </p>
+        
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 transition-colors duration-200"
+        >
+          {isExpanded ? (
+            <>
+              <span>Show Less</span>
+              <FaChevronUp size={12} />
+            </>
+          ) : (
+            <>
+              <span>Show More</span>
+              <FaChevronDown size={12} />
+            </>
+          )}
+        </button>
+      </div>
+      
+      {isExpanded && (
+        <div className="mt-6">
+          <hr className="mb-4" />
+          {extensions.map((extension, index) => (
+            <ExtensionProjectCard
+              key={index}
+              title={extension.title}
+              description={extension.description}
+              demoLink={extension.demoLink}
+              codeLink={extension.codeLink}
+              technologies={extension.technologies}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function Projects() {
-  const projects = [
+  const regularProjects = [
     {
       title: "Autowise",
       description: [
@@ -86,10 +199,10 @@ export default function Projects() {
     {
       title: "Event Management System",
       description: [
-        "Built an event management system utilizing SQL database, and engineering backend infrastructure with Spring Boot and JDBC template to implement CRUD operations for event scheduling and ticket system."
+        "Built an event management system utilizing SQL database, and engineering backend infrastructure with Spring Boot(JPA/JDBC) template to implement CRUD operations for event scheduling and ticket system."
       ],
       codeLink: "https://github.com/driffe/SJSU_Event",
-      technologies: ["Java", "Spring Boot", "SQL", "JDBC", "RESTful API"]
+      technologies: ["Java", "Spring Boot", "SQL", "JPA/JDBC", "RESTful API"]
     },
     {
       title: "Personal Money Tracker",
@@ -108,11 +221,14 @@ export default function Projects() {
       demoLink: "https://weather-app-seyoungohs-projects.vercel.app/", 
       codeLink: "https://github.com/driffe/weatherApp",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "PWA" ,"Vercel"]
-    },
+    }
+  ];
+
+  const chromeExtensions = [
     {
       title: "De Anza College Rate My Profs",
       description: [
-        "Chrome extension that instantly displays professor ratings, class difficulty levels, and would take again percentages when highlighting any professor's name on webpages "
+        "Chrome extension that instantly displays professor ratings, class difficulty levels, and would take again percentages when highlighting any professor's name on webpages"
       ],
       demoLink: "https://chromewebstore.google.com/detail/de-anza-professor-info-vi/omielgfjgpilflimpdbmnppkfbknaogd", 
       codeLink: "https://github.com/driffe/Rate-my-profs",
@@ -121,21 +237,21 @@ export default function Projects() {
     {
       title: "Moon Timer",
       description: [
-        "A minimal timer that allows you to measure time while watching an animation of the moon "
+        "A minimal timer that allows you to measure time while watching an animation of the moon"
       ],
       demoLink: "https://chromewebstore.google.com/detail/moon-phase-timer/kkiikiidimhmaenmpdpfgkhoahkccjhm", 
       codeLink: "https://github.com/driffe/Moon-Timer",
-      technologies: ["Next.js", "JavaScirpt", "TailwindCSS", "Google Extension App"]
+      technologies: ["Next.js", "JavaScript", "TailwindCSS", "Google Extension App"]
     },
     {
       title: "Reaction Time Test",
       description: [
-        "A reaction time test that measures how quickly you respond to visual cues by clicking when prompted, with results displayed in milliseconds. "
+        "A reaction time test that measures how quickly you respond to visual cues by clicking when prompted, with results displayed in milliseconds."
       ],
       demoLink: "https://chromewebstore.google.com/detail/%EB%B0%98%EC%9D%91%EC%86%8D%EB%8F%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/oefdnnlfjgoagefgnhfhffjgdbgipoin", 
       codeLink: "https://github.com/driffe/Reaction_Time_Test",
       technologies: ["JavaScript", "HTML/CSS", "Google Extension App"]
-    },
+    }
   ];
 
   return (
@@ -157,7 +273,9 @@ export default function Projects() {
         {/* Featured Projects */}
         <div className="bg-purple-200 rounded-3xl p-8 mb-8 shadow-xl">
           <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
-          {projects.map((project, index) => (
+          
+          {/* Regular Projects */}
+          {regularProjects.map((project, index) => (
             <ProjectCard
               key={index}
               title={project.title}
@@ -167,6 +285,9 @@ export default function Projects() {
               technologies={project.technologies}
             />
           ))}
+          
+          {/* Chrome Extensions Group */}
+          <ChromeExtensionGroup extensions={chromeExtensions} />
         </div>
 
         {/* GitHub Link */}

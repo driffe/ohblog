@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { Kalam } from 'next/font/google';
-import { FaJava, FaPython, FaHtml5, FaJs, FaPhp, FaDatabase, FaNodeJs, FaGithub  } from 'react-icons/fa';
-import { SiTypescript, SiCplusplus, SiC, SiFirebase, SiMysql, SiReact, SiNextdotjs, SiTailwindcss, SiRacket, SiPandas, SiNumpy, SiFastapi, SiPlotly } from 'react-icons/si';
+import { FaJava, FaPython, FaHtml5, FaJs, FaPhp, FaDatabase, FaNodeJs, FaGithub, FaAws, FaGoogle, FaDocker  } from 'react-icons/fa';
+import { SiTypescript, SiCplusplus, SiC, SiFirebase, SiMysql, SiReact, SiNextdotjs, SiTailwindcss, SiRacket, SiPandas, SiNumpy, SiFastapi, SiPlotly, SiMongodb, SiGooglecloudcomposer, SiAwslambda, SiSelenium, SiVercel, SiNetlify } from 'react-icons/si';
 import { BiLogoSpringBoot } from "react-icons/bi";
+import { FaWebflow } from 'react-icons/fa6';
 
 const kalam = Kalam({
   subsets: ["latin"],
@@ -53,25 +54,33 @@ export default function Skills() {
             <SkillIcon icon={<SiTypescript />} name="TypeScript" />
             <SkillIcon icon={<FaDatabase />} name="SQL" />
             <SkillIcon icon={<FaHtml5 />} name="HTML" />
-            <SkillIcon icon={<SiRacket />} name="Racket" />
-            <SkillIcon icon={<FaPhp />} name="PHP" />
           </div>
         </div>
 
-        {/* Technologies & Frameworks */}
-        <div className="bg-blue-200 rounded-3xl p-8 shadow-xl">
-          <h2 className="text-3xl font-bold mb-6">Technologies & Frameworks</h2>
+        {/*Frameworks */}
+        <div className="bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl">
+          <h2 className="text-3xl font-bold mb-6">Frameworks</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" />
             <SkillIcon icon={<SiNextdotjs />} name="Next.js" />
             <SkillIcon icon={<FaNodeJs />} name="Node.js" />
+            <SkillIcon icon={<SiFastapi />} name="Fast API" />
+            <SkillIcon icon={<SiReact />} name="React" />            
+            <SkillIcon icon={<SiSelenium />} name="Selenium " />
+          </div>
+        </div>
+
+        <div className="bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl">
+          <h2 className="text-3xl font-bold mb-6">Deployments & Databases</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <SkillIcon icon={<SiMysql />} name="MySQL" />
             <SkillIcon icon={<SiFirebase />} name="Firebase" />
-            <SkillIcon icon={<SiFastapi />} name="Fast API" />
-            <SkillIcon icon={<SiPandas />} name="Panda" />
-            <SkillIcon icon={<SiNumpy />} name="Numpy" />
-            <SkillIcon icon={<SiPlotly />} name="Plotly" />
-            <SkillIcon icon={<FaGithub />} name="Github" />
+            <SkillIcon icon={<SiMongodb />} name="MongoDB" />
+            <SkillIcon icon={<FaDocker />} name="Docker" />
+            <SkillIcon icon={<FaGoogle />} name="GCP" />
+            <SkillIcon icon={<FaAws />} name="AWS" />
+            <SkillIcon icon={<SiVercel />} name="Vercel" />
+            <SkillIcon icon={<SiNetlify />} name="Netlify" />
           </div>
         </div>
 
