@@ -24,7 +24,9 @@ export default function About() {
 
       <div className="max-w-4xl mx-auto">
         {/* Introduction Section */}
-        <div className="bg-yellow-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="rounded-3xl p-8 mb-8 relative boxes" style={{
+          background: 'linear-gradient(135deg, #fff864 0%, #ffed4e 100%)'
+        }}>
           <h2 className="text-3xl font-bold mb-6">Hello, I'm Seyoung Oh</h2>
           <div className="space-y-4">
             <p className="text-lg">
@@ -39,7 +41,9 @@ export default function About() {
         </div>
 
         {/* Education */}
-        <div className="bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="rounded-3xl p-8 mb-8 relative boxes" style={{
+          background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)'
+        }}>
           <h2 className="text-3xl font-bold mb-6">Education</h2>
           <div className="mb-4">
             <h3 className="text-xl font-semibold">Software Engineering (B.S.)</h3>
@@ -56,7 +60,9 @@ export default function About() {
         </div>
 
         {/* Personal Interests */}
-        <div className="bg-green-200 rounded-3xl p-8 shadow-xl">
+        <div className="rounded-3xl p-8 shadow-xl relative boxes" style={{
+          background: 'linear-gradient(135deg, #99BC85 0%, #85a872 100%)'
+        }}>
           <h2 className="text-3xl font-bold mb-6">Download Resume</h2>
           <p className="text-lg mb-4">
             There are two option for my resume.
@@ -65,27 +71,33 @@ export default function About() {
             <div className="back p-6 rounded-xl shadow">
               <h3 className="font-semibold text-xl mb-4">Resume Focused on SW</h3>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a 
-                  href="/SeyoungOh(Back)_Resume.pdf" 
-                  download 
-                  className="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors font-medium text-center"
+                <a
+                  href="/SeyoungOh(Back)_Resume.pdf"
+                  download
+                  className="button-winona button-winona-download inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
+                  data-text="Download Resume"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Download Resume
+                  <span className="inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download Resume
+                  </span>
                 </a>
-                <a 
-                  href="/SeyoungOh(Back)_Resume.pdf" 
-                  target="_blank" 
+                <a
+                  href="/SeyoungOh(Back)_Resume.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition-colors font-medium text-center"
+                  className="button-winona button-winona-view inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
+                  data-text="View Resume"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  View Resume
+                  <span className="inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    View Resume
+                  </span>
                 </a>
               </div>
             </div>
@@ -93,27 +105,33 @@ export default function About() {
             <div className="back p-6 rounded-xl shadow">
               <h3 className="font-semibold text-xl mb-4">Resume Focused on Experiences</h3>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a 
-                  href="/SeyoungOh(Tech)_Resume.pdf" 
-                  download 
-                  className="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors font-medium text-center"
+                <a
+                  href="/SeyoungOh(Tech)_Resume.pdf"
+                  download
+                  className="button-winona button-winona-download inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
+                  data-text="Download Resume"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Download Resume
+                  <span className="inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download Resume
+                  </span>
                 </a>
-                <a 
-                  href="/SeyoungOh(Tech)_Resume.pdf" 
-                  target="_blank" 
+                <a
+                  href="/SeyoungOh(Tech)_Resume.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition-colors font-medium text-center"
+                  className="button-winona button-winona-view inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
+                  data-text="View Resume"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                  View Resume
+                  <span className="inline-flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    View Resume
+                  </span>
                 </a>
               </div>
             </div>
@@ -139,7 +157,7 @@ export default function About() {
           </Link>
           <Link href="/content/playground">
             <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-                Playground
+              Playground
             </button>
           </Link>
           <Link href="/content/contact">

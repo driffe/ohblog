@@ -308,9 +308,9 @@ export default function Projects() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/content/about">
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
+                  About Me
                 </button>
-            </Link>  
+            </Link>
             <Link href="/content/skills">
             <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
               Skills
@@ -323,7 +323,7 @@ export default function Projects() {
           </Link>
           <Link href="/content/playground">
             <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-                Playground
+              Playground
             </button>
           </Link>
           <Link href="/content/contact">

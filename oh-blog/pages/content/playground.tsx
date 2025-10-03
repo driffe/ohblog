@@ -144,9 +144,9 @@ export default function Playground() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/content/about">
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
+                  About Me
                 </button>
-            </Link>  
+            </Link>
             <Link href="/content/skills">
             <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
               Skills
