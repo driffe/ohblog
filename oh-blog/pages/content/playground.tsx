@@ -16,7 +16,7 @@ interface HobbyCardProps {
 
 const HobbyCard = ({ icon, title, description }: HobbyCardProps) => {
   return (
-    <div className="back rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+    <div className="hobby-card bg-color rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300">
       <div className="text-5xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-gray-700">{description}</p>
@@ -31,7 +31,7 @@ interface AwardCardProps {
 
 const AwardCard = ({ title, year }: AwardCardProps) => {
   return (
-    <div className="bg-color rounded-xl shadow-lg p-6 flex items-start gap-4">
+    <div className="award-card bg-color rounded-xl shadow-lg p-6 flex items-start gap-4 transition-all duration-300">
       <div className="text-3xl text-yellow-500 mt-1">
         <FaTrophy />
       </div>
@@ -97,7 +97,7 @@ export default function Playground() {
 
       <div className="max-w-4xl mx-auto">
         {/* Hobbies Section */}
-        <div className="bg-red-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-red-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Hobbies & Interests</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hobbies.map((hobby, index) => (
@@ -111,23 +111,26 @@ export default function Playground() {
           </div>
           {/* Portfolio Button */}
           <div className="flex justify-center mt-8">
-            <a 
-              href="https://www.instagram.com/dancing_bottle/" 
+            <a
+              href="https://www.instagram.com/dancing_bottle/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-color hover:bg-gray-100 text-red-500 font-bold px-6 py-3 rounded-full shadow-md transition-all hover:shadow-lg"
+              className="button-winona button-winona-portfolio inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold"
+              data-text="View My Works"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              View My Works
+              <span className="inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                View My Works
+              </span>
             </a>
           </div>
         </div>
 
 
         {/* Awards Section */}
-        <div className="bg-yellow-200 rounded-3xl p-8 shadow-xl">
+        <div className="bg-yellow-200 rounded-3xl p-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Awards & Achievements</h2>
           <div className="space-y-4">
             {awards.map((award, index) => (
@@ -144,9 +147,9 @@ export default function Playground() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/content/about">
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
+                  About Me
                 </button>
-            </Link>  
+            </Link>
             <Link href="/content/skills">
             <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
               Skills

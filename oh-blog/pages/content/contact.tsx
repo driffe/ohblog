@@ -17,14 +17,17 @@ interface ContactItemProps {
 
 const ContactItem = ({ icon, label, href, color }: ContactItemProps) => {
   return (
-    <a 
+    <a
       href={href}
-      target="_blank" 
+      target="_blank"
       rel="noopener noreferrer"
-      className={`${color} flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg transition-transform hover:scale-105`}
+      className={`${color} button-winona contact-item-hover flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg transition-all duration-300`}
+      data-text={label}
     >
-      <div className="text-6xl mb-4 text-white">{icon}</div>
-      <span className="text-xl font-bold text-white">{label}</span>
+      <span className="flex flex-col items-center justify-center">
+        <div className="text-6xl mb-4 text-white">{icon}</div>
+        <span className="text-xl font-bold text-white">{label}</span>
+      </span>
     </a>
   );
 };
@@ -67,13 +70,13 @@ export default function Contact() {
       </header>
 
       <div className="max-w-4xl mx-auto">
-        <div className="bg-gray-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-gray-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactItems.map((item, index) => (
-              <ContactItem 
-                key={index} 
-                icon={item.icon} 
-                label={item.label} 
+              <ContactItem
+                key={index}
+                icon={item.icon}
+                label={item.label}
                 href={item.href}
                 color={item.color}
               />
@@ -82,7 +85,7 @@ export default function Contact() {
         </div>
 
         {/* Quick message */}
-        <div className="bg-blue-200 rounded-3xl p-8 shadow-xl text-center">
+        <div className="bg-blue-200 rounded-3xl p-8 shadow-xl text-center relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-4">Let's Connect!</h2>
           <p className="text-lg">
             I'm open to new opportunities and collaborations! Feel free to reach out to discuss potential projects, job opportunities, or simply to connect. I'd love to hear from you!

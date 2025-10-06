@@ -26,9 +26,9 @@ interface ExtensionProjectProps {
 
 const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: ProjectProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+    <div className="project-card bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative boxes transition-all duration-300">
       <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-center sm:text-left">{title}</h3>
-      
+
       <div className="flex flex-wrap justify-center sm:justify-start gap-1 sm:gap-2 mb-3 sm:mb-4">
         {technologies.map((tech, index) => (
           <span key={index} className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
@@ -36,34 +36,40 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
           </span>
         ))}
       </div>
-      
+
       <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base mb-4 sm:mb-6">
         {description.map((point, index) => (
           <li key={index} className="text-gray-700 pb-1 break-words">{point}</li>
         ))}
       </ul>
-      
+
       <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3">
         {demoLink && (
-          <a 
-            href={demoLink} 
-            target="_blank" 
+          <a
+            href={demoLink}
+            target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center gap-1 sm:gap-2"
+            className="button-winona button-winona-demo inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-sm font-medium"
+            data-text="Demo"
           >
-            <FaExternalLinkAlt size={12} />
-            Demo
+            <span className="inline-flex items-center gap-1 sm:gap-2">
+              <FaExternalLinkAlt size={12} />
+              Demo
+            </span>
           </a>
         )}
         {codeLink && (
-          <a 
-            href={codeLink} 
-            target="_blank" 
+          <a
+            href={codeLink}
+            target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-700 hover:bg-gray-800 text-white text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex items-center gap-1 sm:gap-2"
+            className="button-winona button-winona-code inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-sm font-medium"
+            data-text="Code"
           >
-            <FaGithub size={12} />
-            Code
+            <span className="inline-flex items-center gap-1 sm:gap-2">
+              <FaGithub size={12} />
+              Code
+            </span>
           </a>
         )}
       </div>
@@ -75,7 +81,7 @@ const ExtensionProjectCard = ({ title, description, demoLink, codeLink, technolo
   return (
     <div className="bg-gray-50 rounded-lg shadow-md p-4 mb-4 ml-4">
       <h4 className="text-md sm:text-lg font-semibold mb-2">{title}</h4>
-      
+
       <div className="flex flex-wrap gap-1 mb-2">
         {technologies.filter(tech => tech !== "Google Extension App").map((tech, index) => (
           <span key={index} className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
@@ -83,34 +89,40 @@ const ExtensionProjectCard = ({ title, description, demoLink, codeLink, technolo
           </span>
         ))}
       </div>
-      
+
       <ul className="list-disc pl-4 space-y-1 text-sm mb-3">
         {description.map((point, index) => (
           <li key={index} className="text-gray-600">{point}</li>
         ))}
       </ul>
-      
+
       <div className="flex gap-2">
         {demoLink && (
-          <a 
-            href={demoLink} 
-            target="_blank" 
+          <a
+            href={demoLink}
+            target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded-full flex items-center gap-1"
+            className="button-winona button-winona-demo inline-flex items-center justify-center gap-1 px-3 py-1 rounded-lg text-xs font-medium"
+            data-text="Demo"
           >
-            <FaExternalLinkAlt size={10} />
-            Demo
+            <span className="inline-flex items-center gap-1">
+              <FaExternalLinkAlt size={10} />
+              Demo
+            </span>
           </a>
         )}
         {codeLink && (
-          <a 
-            href={codeLink} 
-            target="_blank" 
+          <a
+            href={codeLink}
+            target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-700 hover:bg-gray-800 text-white text-xs px-3 py-1 rounded-full flex items-center gap-1"
+            className="button-winona button-winona-code inline-flex items-center justify-center gap-1 px-3 py-1 rounded-lg text-xs font-medium"
+            data-text="Code"
           >
-            <FaGithub size={10} />
-            Code
+            <span className="inline-flex items-center gap-1">
+              <FaGithub size={10} />
+              Code
+            </span>
           </a>
         )}
       </div>
@@ -122,7 +134,7 @@ const ChromeExtensionGroup = ({ extensions }: { extensions: ExtensionProjectProp
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+    <div className="project-card bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative boxes transition-all duration-300">
       <div>
         <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Chrome Extension Suite</h3>
         <div className="flex flex-wrap gap-1 sm:gap-2 mb-3">
@@ -139,25 +151,28 @@ const ChromeExtensionGroup = ({ extensions }: { extensions: ExtensionProjectProp
         <p className="text-gray-700 text-sm sm:text-base mb-4">
           A collection of {extensions.length} Chrome extensions with 25+ downloading.
         </p>
-        
+
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 transition-colors duration-200"
+          className="button-winona button-winona-expand inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+          data-text={isExpanded ? "Show Less" : "Show More"}
         >
-          {isExpanded ? (
-            <>
-              <span>Show Less</span>
-              <FaChevronUp size={12} />
-            </>
-          ) : (
-            <>
-              <span>Show More</span>
-              <FaChevronDown size={12} />
-            </>
-          )}
+          <span className="inline-flex items-center gap-2">
+            {isExpanded ? (
+              <>
+                <span>Show Less</span>
+                <FaChevronUp size={12} />
+              </>
+            ) : (
+              <>
+                <span>Show More</span>
+                <FaChevronDown size={12} />
+              </>
+            )}
+          </span>
         </button>
       </div>
-      
+
       {isExpanded && (
         <div className="mt-6">
           <hr className="mb-4" />
@@ -271,9 +286,9 @@ export default function Projects() {
 
       <div className="max-w-4xl mx-auto">
         {/* Featured Projects */}
-        <div className="bg-purple-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-purple-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
-          
+
           {/* Regular Projects */}
           {regularProjects.map((project, index) => (
             <ProjectCard
@@ -285,22 +300,46 @@ export default function Projects() {
               technologies={project.technologies}
             />
           ))}
-          
+
           {/* Chrome Extensions Group */}
           <ChromeExtensionGroup extensions={chromeExtensions} />
+        </div>
+
+        {/* Awards and Recognition */}
+        <div className="rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque" style={{
+          background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)'
+        }}>
+          <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
+          <ul className="space-y-4 list-disc ml-6">
+            <li className="pl-2">
+              <span className="font-semibold">Certificate Of Achievement</span> – SpartUp Hackathon 2025
+            </li>
+            <li className="pl-2">
+              <span className="font-semibold">Placed Top 10</span> – SpartUp × SBDC Pitch Jam 2025
+            </li>
+            <li className="pl-2">
+              <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025
+            </li>
+            <li className="pl-2">
+              <span className="font-semibold">III Corps Commanding General's Commendation</span> – ROK-U.S. Joint Military Exercise Freedom Shield 2024
+            </li>
+          </ul>
         </div>
 
         {/* GitHub Link */}
         <div className="text-center mt-10">
           <p className="text-xl mb-4">Explore more of my projects on GitHub</p>
-          <a 
-            href="https://github.com/driffe" 
-            target="_blank" 
+          <a
+            href="https://github.com/driffe"
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-full font-medium"
+            className="button-winona button-winona-github inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium"
+            data-text="Visit My GitHub Profile"
           >
-            <FaGithub size={20} />
-            Visit My GitHub Profile
+            <span className="inline-flex items-center gap-2">
+              <FaGithub size={20} />
+              Visit My GitHub Profile
+            </span>
           </a>
         </div>
 
@@ -308,9 +347,9 @@ export default function Projects() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/content/about">
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
+                  About Me
                 </button>
-            </Link>  
+            </Link>
             <Link href="/content/skills">
             <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
               Skills
@@ -323,7 +362,7 @@ export default function Projects() {
           </Link>
           <Link href="/content/playground">
             <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-                Playground
+              Playground
             </button>
           </Link>
           <Link href="/content/contact">

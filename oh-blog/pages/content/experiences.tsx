@@ -17,7 +17,7 @@ interface ExperienceProps {
 
 const ExperienceCard = ({ title, company, location, period, responsibilities }: ExperienceProps) => {
   return (
-    <div className="bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8">
+    <div className="experience-card bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative transition-all duration-300">
       <div className="flex flex-col mb-2">
         <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
@@ -108,7 +108,9 @@ export default function Experiences() {
 
       <div className="max-w-4xl mx-auto">
         {/* Work Experience */}
-        <div className="bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
+          background: 'linear-gradient(135deg, #F69E7B 0%, #f28960 100%)'
+        }}>
           <h2 className="text-3xl font-bold mb-6">Work Experience</h2>
           {experiences.map((experience, index) => (
             <ExperienceCard
@@ -122,37 +124,18 @@ export default function Experiences() {
           ))}
         </div>
 
-        {/* Awards and Recognition */}
-        <div className="bg-blue-200 rounded-3xl p-8 shadow-xl">
-          <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
-          <ul className="space-y-4 list-disc ml-6">
-            <li className="pl-2">
-              <span className="font-semibold">Certificate Of Achievement</span> – SpartUp Hackathon 2025 
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">Placed Top 10</span> – SpartUp × SBDC Pitch Jam 2025 
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025 
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">III Corps Commanding General's Commendation</span> – ROK-U.S. Joint Military Exercise Freedom Shield 2024
-            </li>
-          </ul>
-        </div>
-
         {/* Navigation to Other Sections */}
         <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/content/about">
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
+                  About Me
                 </button>
             </Link>
             <Link href="/content/skills">
             <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
               Skills
             </button>
-          </Link>  
+          </Link>
           <Link href="/content/projects">
             <button className="btn-project px-6 py-3 rounded-full font-bold shadow-md">
               Projects
@@ -160,7 +143,7 @@ export default function Experiences() {
           </Link>
           <Link href="/content/playground">
             <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-                Playground
+              Playground
             </button>
           </Link>
           <Link href="/content/contact">

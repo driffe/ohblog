@@ -14,11 +14,12 @@ const kalam = Kalam({
 interface SkillIconProps {
     icon: React.ReactNode;
     name: string;
+    color?: string;
 }
 
-const SkillIcon = ({ icon, name }: SkillIconProps) => {
+const SkillIcon = ({ icon, name, color }: SkillIconProps) => {
     return (
-        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center hover:shadow-lg">
+        <div className="skill-icon bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center transition-all duration-300" data-color={color}>
         <div className="text-4xl mb-3">{icon}</div>
         <h3 className="font-semibold">{name}</h3>
         </div>
@@ -43,44 +44,44 @@ export default function Skills() {
 
       <div className="max-w-4xl mx-auto">
         {/* Programming Languages */}
-        <div className="bg-green-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-green-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Programming Languages</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<FaJava />} name="Java" />
-            <SkillIcon icon={<SiCplusplus />} name="C++" />
-            <SkillIcon icon={<SiC />} name="C" />
-            <SkillIcon icon={<FaPython />} name="Python" />
-            <SkillIcon icon={<FaJs />} name="JavaScript" />
-            <SkillIcon icon={<SiTypescript />} name="TypeScript" />
-            <SkillIcon icon={<FaDatabase />} name="SQL" />
-            <SkillIcon icon={<FaHtml5 />} name="HTML" />
+            <SkillIcon icon={<FaJava />} name="Java" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<SiCplusplus />} name="C++" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<SiC />} name="C" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<FaPython />} name="Python" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<FaJs />} name="JavaScript" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<SiTypescript />} name="TypeScript" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<FaDatabase />} name="SQL" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<FaHtml5 />} name="HTML" color="rgb(153, 188, 133)" />
           </div>
         </div>
 
         {/*Frameworks */}
-        <div className="bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Frameworks</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" />
-            <SkillIcon icon={<SiNextdotjs />} name="Next.js" />
-            <SkillIcon icon={<FaNodeJs />} name="Node.js" />
-            <SkillIcon icon={<SiFastapi />} name="Fast API" />
-            <SkillIcon icon={<SiReact />} name="React" />            
-            <SkillIcon icon={<SiSelenium />} name="Selenium " />
+            <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" color="rgb(191, 219, 254)" />
+            <SkillIcon icon={<SiNextdotjs />} name="Next.js" color="rgb(191, 219, 254)" />
+            <SkillIcon icon={<FaNodeJs />} name="Node.js" color="rgb(191, 219, 254)" />
+            <SkillIcon icon={<SiFastapi />} name="Fast API" color="rgb(191, 219, 254)" />
+            <SkillIcon icon={<SiReact />} name="React" color="rgb(191, 219, 254)" />
+            <SkillIcon icon={<SiSelenium />} name="Selenium " color="rgb(191, 219, 254)" />
           </div>
         </div>
 
-        <div className="bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl">
+        <div className="bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Deployments & Databases</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<SiMysql />} name="MySQL" />
-            <SkillIcon icon={<SiFirebase />} name="Firebase" />
-            <SkillIcon icon={<SiMongodb />} name="MongoDB" />
-            <SkillIcon icon={<FaDocker />} name="Docker" />
-            <SkillIcon icon={<FaGoogle />} name="GCP" />
-            <SkillIcon icon={<FaAws />} name="AWS" />
-            <SkillIcon icon={<SiVercel />} name="Vercel" />
-            <SkillIcon icon={<SiNetlify />} name="Netlify" />
+            <SkillIcon icon={<SiMysql />} name="MySQL" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<SiFirebase />} name="Firebase" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<SiMongodb />} name="MongoDB" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<FaDocker />} name="Docker" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<FaGoogle />} name="GCP" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<FaAws />} name="AWS" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<SiVercel />} name="Vercel" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<SiNetlify />} name="Netlify" color="rgb(246, 158, 123)" />
           </div>
         </div>
 
@@ -88,9 +89,9 @@ export default function Skills() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link href="/content/about">
                 <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
+                  About Me
                 </button>
-            </Link>  
+            </Link>
           <Link href="/content/experiences">
             <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
               Experiences
@@ -103,7 +104,7 @@ export default function Skills() {
           </Link>
           <Link href="/content/playground">
             <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-                Playground
+              Playground
             </button>
           </Link>
           <Link href="/content/contact">

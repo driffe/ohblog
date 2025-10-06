@@ -69,7 +69,10 @@ export default function Home() {
           {/* Contacts */}
           <div className="contact boxes shadow-xl">
             <a href='./content/contact' className='h-full w-full'>
-              <h2 className="box-text">Contact Me</h2>
+              <div className='flex flex-col justify-between h-full'>
+                <h2 className="box-text">Contact Me</h2>
+                <p>Keep in touch!</p>
+              </div>
             </a>
           </div>
 
