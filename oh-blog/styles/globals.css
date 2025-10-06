@@ -26,11 +26,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-        radial-gradient(circle at 20% 50%, rgba(255, 248, 100, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(190, 173, 250, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(153, 188, 133, 0.03) 0%, transparent 50%);
+    background-image: url('/panji-jilgam.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
     pointer-events: none;
+    z-index: 0;
 }
 
 .back::after {
@@ -40,22 +42,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.01) 2px,
-            rgba(0, 0, 0, 0.01) 4px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 0, 0, 0.01) 2px,
-            rgba(0, 0, 0, 0.01) 4px
-        );
+    background: linear-gradient(135deg, rgba(250, 250, 243, 0.5) 0%, rgba(240, 240, 232, 0.5) 100%);
     pointer-events: none;
+    z-index: 0;
+}
+
+.back > * {
+    position: relative;
+    z-index: 1;
 }
 .bg-color {
     background-color: #fafaf3;
@@ -594,6 +588,49 @@ body {
         position: sticky;
         top: 0;
         z-index: 1;
+    }
+
+    .navigation-section {
+        position: relative;
+        z-index: 10;
+        background: linear-gradient(135deg, #fafaf3 0%, #f0f0e8 100%);
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .navigation-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1.5rem;
+        background-image: url('/panji-jilgam.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.6;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .navigation-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 1.5rem;
+        background: linear-gradient(135deg, rgba(250, 250, 243, 0.5) 0%, rgba(240, 240, 232, 0.5) 100%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .navigation-section > * {
+        position: relative;
+        z-index: 2;
     }
 
     .about-me,

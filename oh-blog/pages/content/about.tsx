@@ -139,7 +139,7 @@ export default function About() {
         </div>
 
         {/* Navigation to Other Sections */}
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
+        <div className="navigation-section mt-12 flex flex-wrap justify-center gap-4">
           <Link href="/content/skills">
             <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
               Skills
