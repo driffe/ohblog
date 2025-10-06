@@ -100,7 +100,6 @@ body {
     min-height: 13rem;
     border-radius: 2.5rem;
     flex-direction: column;
-    align-items: flex-start;
     padding: 2rem;
     display: flex;
     position: relative;
@@ -129,17 +128,44 @@ body {
     pointer-events: none;
 }
 
-.boxes:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow:
-        0 20px 40px -10px rgba(0, 0, 0, 0.15),
-        0 10px 25px -5px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+.boxes-opaque {
+    z-index: 1;
 }
 
-.boxes:active {
-    transform: translateY(-4px) scale(1.01);
+.boxes-opaque::before {
+    display: none;
 }
+
+.about-me:hover {
+    box-shadow: 0 0 20px rgba(255, 237, 78, 0.6), 0 0 40px rgba(255, 237, 78, 0.4);
+    animation: jelly 0.5s;
+}
+
+.project:hover {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6), 0 0 40px rgba(138, 43, 226, 0.4);
+    animation: jelly 0.5s;
+}
+
+.skill:hover {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6), 0 0 40px rgba(76, 175, 80, 0.4);
+    animation: jelly 0.5s;
+}
+
+.playground:hover {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.4);
+    animation: jelly 0.5s;
+}
+
+.experience:hover {
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.6), 0 0 40px rgba(255, 87, 34, 0.4);
+    animation: jelly 0.5s;
+}
+
+.contact:hover {
+    box-shadow: 0 0 20px rgba(152, 176, 188, 0.6), 0 0 40px rgba(152, 176, 188, 0.4);
+    animation: jelly 0.5s;
+}
+
 
 .about-me {
     grid-area: 1 / 1 / 3 / 2;
@@ -237,13 +263,13 @@ body {
         transform: scale(1, 1);
     }
     25% {
-        transform: scale(0.9, 1.1);
+        transform: scale(0.97, 1.03);
     }
     50% {
-        transform: scale(1.1, 0.9);
+        transform: scale(1.03, 0.97);
     }
     75% {
-        transform: scale(0.95, 1.05);
+        transform: scale(0.99, 1.01);
     }
 }
 
@@ -311,6 +337,98 @@ body {
     background-color: #d1d5db;
 }
 
+.button-winona-demo {
+    border-color: #3b82f6;
+    color: white;
+    background-color: #3b82f6;
+}
+
+.button-winona-demo:hover {
+    border-color: #2563eb;
+    background-color: #2563eb;
+}
+
+.button-winona-code {
+    border-color: #374151;
+    color: white;
+    background-color: #374151;
+}
+
+.button-winona-code:hover {
+    border-color: #1f2937;
+    background-color: #1f2937;
+}
+
+.button-winona-github {
+    border-color: #1f2937;
+    color: white;
+    background-color: #1f2937;
+}
+
+.button-winona-github:hover {
+    border-color: #111827;
+    background-color: #111827;
+}
+
+.button-winona-portfolio {
+    border-color: #dc2626;
+    color: #dc2626;
+    background-color: #fafaf3;
+}
+
+.button-winona-portfolio:hover {
+    border-color: #b91c1c;
+    background-color: rgba(220, 38, 38, 0.1);
+}
+
+.button-winona-expand {
+    border-color: #3b82f6;
+    color: white;
+    background-color: #3b82f6;
+}
+
+.button-winona-expand:hover {
+    border-color: #2563eb;
+    background-color: #2563eb;
+}
+
+.contact-item-hover {
+    border: 2px solid transparent;
+}
+
+.contact-item-hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translate3d(0, 25%, 0);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.contact-item-hover:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.contact-item-hover:hover > span {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0);
+}
+
+.contact-item-hover > span {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
 .btn-about,
 .btn-project,
 .btn-skill,
@@ -323,6 +441,8 @@ body {
 
 .btn-about {
     background-color: #fff864;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-about:hover {
@@ -331,6 +451,8 @@ body {
 
 .btn-project {
     background-color: #BEADFA;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-project:hover {
@@ -339,6 +461,8 @@ body {
 
 .btn-skill {
     background-color: #99BC85;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-skill:hover {
@@ -347,6 +471,8 @@ body {
 
 .btn-playground {
     background-color: #FF8080;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-playground:hover {
@@ -355,6 +481,8 @@ body {
 
 .btn-experience {
     background-color: #F69E7B;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-experience:hover {
@@ -364,11 +492,45 @@ body {
 .btn-contact,
 .contact {
     background-color: #ADC4CE;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-contact:hover,
 .contact:hover {
     animation: jelly 0.5s;
+}
+
+.skill-icon {
+    position: relative;
+}
+
+.skill-icon[data-color="rgb(153, 188, 133)"]:hover {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6), 0 0 40px rgba(76, 175, 80, 0.4);
+}
+
+.skill-icon[data-color="rgb(191, 219, 254)"]:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.skill-icon[data-color="rgb(246, 158, 123)"]:hover {
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.6), 0 0 40px rgba(255, 87, 34, 0.4);
+}
+
+.experience-card:hover {
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.6), 0 0 40px rgba(255, 87, 34, 0.4);
+}
+
+.project-card:hover {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6), 0 0 40px rgba(138, 43, 226, 0.4);
+}
+
+.hobby-card:hover {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.4);
+}
+
+.award-card:hover {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.6), 0 0 40px rgba(234, 179, 8, 0.4);
 }
 
 @media screen and (max-width: 640px) {

@@ -24,7 +24,7 @@ export default function About() {
 
       <div className="max-w-4xl mx-auto">
         {/* Introduction Section */}
-        <div className="rounded-3xl p-8 mb-8 relative boxes" style={{
+        <div className="rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, #fff864 0%, #ffed4e 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Hello, I'm Seyoung Oh</h2>
@@ -34,14 +34,14 @@ export default function About() {
               with a passion for building innovative solutions and continuous learning.
             </p>
             <p className="text-lg">
-              Expected to graduate in December 2025, I'm focusing on developing my skills in 
+              Expected to graduate in December 2025, I'm focusing on developing my skills in
               full-stack development, data analysis, HW/SW solution, and Information Technology.
             </p>
           </div>
         </div>
 
         {/* Education */}
-        <div className="rounded-3xl p-8 mb-8 relative boxes" style={{
+        <div className="rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Education</h2>
@@ -52,15 +52,15 @@ export default function About() {
           <div>
             <h3 className="text-xl font-semibold mb-2">Relevant Coursework</h3>
             <p>
-              Parallel Processing, Programming Paradigms, Software Quality Engineering, Object-Oriented Design, 
-              Enterprise Software, Database Management Systems, Data Structures and Algorithms, 
+              Parallel Processing, Programming Paradigms, Software Quality Engineering, Object-Oriented Design,
+              Enterprise Software, Database Management Systems, Data Structures and Algorithms,
               Operation Systems, Computer Network & Security
             </p>
           </div>
         </div>
 
         {/* Personal Interests */}
-        <div className="rounded-3xl p-8 shadow-xl relative boxes" style={{
+        <div className="rounded-3xl p-8 shadow-xl relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, #99BC85 0%, #85a872 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Download Resume</h2>
@@ -68,7 +68,7 @@ export default function About() {
             There are two option for my resume.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <div className="back p-6 rounded-xl shadow">
+            <div className="bg-color p-6 rounded-xl shadow">
               <h3 className="font-semibold text-xl mb-4">Resume Focused on SW</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -101,8 +101,8 @@ export default function About() {
                 </a>
               </div>
             </div>
-            
-            <div className="back p-6 rounded-xl shadow">
+
+            <div className="bg-color p-6 rounded-xl shadow">
               <h3 className="font-semibold text-xl mb-4">Resume Focused on Experiences</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a

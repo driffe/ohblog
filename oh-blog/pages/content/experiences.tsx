@@ -17,17 +17,7 @@ interface ExperienceProps {
 
 const ExperienceCard = ({ title, company, location, period, responsibilities }: ExperienceProps) => {
   return (
-    <div className="bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative transition-all duration-300" style={{
-      border: '2px solid transparent'
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.borderColor = '#fa4600';
-      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(250, 70, 0, 0.15), 0 0 15px rgba(250, 70, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.15)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.borderColor = 'transparent';
-      e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-    }}>
+    <div className="experience-card bg-color rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative transition-all duration-300">
       <div className="flex flex-col mb-2">
         <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
@@ -118,7 +108,7 @@ export default function Experiences() {
 
       <div className="max-w-4xl mx-auto">
         {/* Work Experience */}
-        <div className="rounded-3xl p-8 mb-8 relative boxes" style={{
+        <div className="rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, #F69E7B 0%, #f28960 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Work Experience</h2>
@@ -132,27 +122,6 @@ export default function Experiences() {
               responsibilities={experience.responsibilities}
             />
           ))}
-        </div>
-
-        {/* Awards and Recognition */}
-        <div className="rounded-3xl p-8 shadow-xl relative boxes" style={{
-          background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)'
-        }}>
-          <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
-          <ul className="space-y-4 list-disc ml-6">
-            <li className="pl-2">
-              <span className="font-semibold">Certificate Of Achievement</span> – SpartUp Hackathon 2025 
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">Placed Top 10</span> – SpartUp × SBDC Pitch Jam 2025 
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025 
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">III Corps Commanding General's Commendation</span> – ROK-U.S. Joint Military Exercise Freedom Shield 2024
-            </li>
-          </ul>
         </div>
 
         {/* Navigation to Other Sections */}
