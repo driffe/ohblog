@@ -21,7 +21,7 @@ const ContactItem = ({ icon, label, href, color }: ContactItemProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${color} button-winona contact-item-hover flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg transition-all duration-300`}
+      className={`${color} button-winona contact-item-hover contact-item flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg transition-all duration-300`}
       data-text={label}
     >
       <span className="flex flex-col items-center justify-center">

@@ -550,6 +550,52 @@ body {
         z-index: 1;
     }
 
+    .boxes-opaque {
+        position: static;
+    }
+
+    .project-card {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .experience-card {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .about-section {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .skills-section {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .hobby-card {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .award-card {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .contact-item {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
     .about-me,
     .project,
     .skill,

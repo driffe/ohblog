@@ -24,7 +24,7 @@ export default function About() {
 
       <div className="max-w-4xl mx-auto">
         {/* Introduction Section */}
-        <div className="rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
+        <div className="about-section rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, #fff864 0%, #ffed4e 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Hello, I'm Seyoung Oh</h2>
@@ -41,7 +41,7 @@ export default function About() {
         </div>
 
         {/* Education */}
-        <div className="rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
+        <div className="about-section rounded-3xl p-8 mb-8 relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Education</h2>
@@ -60,7 +60,7 @@ export default function About() {
         </div>
 
         {/* Personal Interests */}
-        <div className="rounded-3xl p-8 shadow-xl relative boxes boxes-opaque" style={{
+        <div className="about-section rounded-3xl p-8 shadow-xl relative boxes boxes-opaque" style={{
           background: 'linear-gradient(135deg, #99BC85 0%, #85a872 100%)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Download Resume</h2>

@@ -306,8 +306,11 @@ export default function Projects() {
         </div>
 
         {/* Awards and Recognition */}
-        <div className="rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque" style={{
-          background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)'
+        <div className="rounded-3xl p-8 mb-8 shadow-xl" style={{
+          background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)',
+          position: 'relative',
+          boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 5px 15px -3px rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.3)',
+          border: '1px solid rgba(255, 255, 255, 0.2)'
         }}>
           <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
           <ul className="space-y-4 list-disc ml-6">
