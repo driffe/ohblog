@@ -44,7 +44,7 @@ export default function Skills() {
 
       <div className="max-w-4xl mx-auto">
         {/* Programming Languages */}
-        <div className="bg-green-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
+        <div className="skills-section bg-green-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Programming Languages</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <SkillIcon icon={<FaJava />} name="Java" color="rgb(153, 188, 133)" />
@@ -59,7 +59,7 @@ export default function Skills() {
         </div>
 
         {/*Frameworks */}
-        <div className="bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
+        <div className="skills-section bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Frameworks</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" color="rgb(191, 219, 254)" />
@@ -71,7 +71,7 @@ export default function Skills() {
           </div>
         </div>
 
-        <div className="bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
+        <div className="skills-section bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
           <h2 className="text-3xl font-bold mb-6">Deployments & Databases</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <SkillIcon icon={<SiMysql />} name="MySQL" color="rgb(246, 158, 123)" />
