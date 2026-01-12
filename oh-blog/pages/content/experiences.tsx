@@ -41,10 +41,11 @@ export default function Experiences() {
       title: "Software Engineering Intern",
       company: "KQED",
       location: "San Francisco, CA",
-      period: "Jul 2024 - Present",
+      period: "Jul 2025 - Present",
       responsibilities: [
-        "Reduced API surface area by 27% through systematic audits and deprecation of unused endpoints in Spring Boot(Webflux) and MongoDB/firebase within a microservices architecture (MSA) environment on Docker/GCP.",
-        "Improved developer build times by 55% through resolving IntelliJ configuration issues, enabling local development and documenting solutions for team productivity."
+        "Achieved 27% API reduction by auditing 100+ endpoints across microservices using Postman, deprecating unused APIs based on frontend usage analysis, simplifying API documentation, and reducing maintenance overhead.",
+        "Optimized file upload bottleneck by migrating to reactive architecture (Spring WebFlux), which eliminated blocking errors under concurrent load and achieved 25x throughput increase (2 → 50+ req/sec).",
+        "Identified IntelliJ build configuration issue, authored solution documents for the stakeholders, enabling engineers to use IntelliJ and reducing build times by 55%."
       ]
     },
     {
@@ -53,29 +54,28 @@ export default function Experiences() {
       location: "Campbell, CA",
       period: "Sep 2024 - Jan 2025",
       responsibilities: [
-        "Designed and implemented a Shmoo testing framework in C++ for NAND flash memory validation, automating voltage and timing parameter analysis against vendor specifications.",
-        "Discovered an additional 17% VCC power margin through systematic performance validation, enabling broader operational stability and extending device lifespan under varying power conditions."
+        "Built an automated hardware validation framework in C++ that tested device operations (reset, power cycling, EPR) across voltage ranges, enabling engineers to identify reliable operating parameters with single-input execution.",
+        "Identified an additional 17% VCC power margin through systematic performance validation, enabling broader operational stability and extending device lifespan under varying power conditions."
       ]
     },
     {
       title: "Programming Tutor",
       company: "Kim Study",
-      location: "Seoul, South Korea",
-      period: "Apr 2024 - July 2024",
+      location: "Hybrid",
+      period: "Apr 2024 - Jul 2024",
       responsibilities: [
-        "Mentored students in programming, including block coding, Python, and Java, through personalized instruction.",
-        "Guided one student to successful acceptance into the Gifted and Talented Education Program through a comprehensive curriculum focusing on both creative and practical Micro:bit projects"
+        "Mentored students in programming including block coding, Python, and Java through personalized instruction.",
+        "Guided one student to successful acceptance into the Gifted and Talented Education Program through comprehensive curriculum focusing on both creative and practical Micro:bit projects."
       ]
     },
     {
       title: "IT Specialist (Sergeant)",
-      company: "Republic Of Korea Army",
-      location: "Goseong-gun, South Korea",
+      company: "Republic of Korea Army",
+      location: "Goseong, Gangwon, South Korea",
       period: "Oct 2022 - Apr 2024",
       responsibilities: [
-        "Diagnosed hardware, software, and network issues affecting military systems at the Class III Security Office, troubleshooting and resolving at least 5 issues per day.",
-        "Conducted daily database inspections using PuTTY and Unix to ensure data integrity and server stability by monitoring performance and implementing optimizations, successfully maintaining 98% data stability and connectivity.",
-        "Executed security audits on over 100 IT devices every quarter to evaluate both software and hardware aspects to identify potential vulnerabilities and provide solutions, successfully maintaining a security stability rate above 90%.",
+        "Maintained 98% uptime for critical military databases and server infrastructure supporting 1200+ personnel by conducting daily health checks via PuTTY/Unix.",
+        "Resolved 1,800+ hardware, software, and network incidents (averaging 5+ daily), ensuring operational continuity.",
         "Participated in the Freedom Shield exercise, a joint operation conducted by the United States and South Korea, and managed IT operations in a high-pressure environment, earning the III Corps Commanding General's Commendation."
       ]
     },
@@ -85,8 +85,8 @@ export default function Experiences() {
       location: "Yongin-si, South Korea",
       period: "Jul 2022 - Sep 2022",
       responsibilities: [
-        "Built an interactive temperature monitoring dashboard using Plotly Python to analyze post-testing log data, enabling efficient identification of thermal anomalies and reducing debugging time by 80%.",
-        "Developed and automated a robust data pipeline with NumPy and Pandas, cleaning and analyzing 10K+ log entries."
+        "Built an interactive temperature monitoring dashboard using Plotly Python and Figma to visualize and analyze post-testing log data, enabling thermal anomaly detection and improving debugging efficiency by 85%.",
+        "Developed an automated data pipeline with NumPy and Pandas, cleaning and processing 10K+ burn-in test logs for the hardware team's thermal analysis workflow."
       ]
     }
   ];

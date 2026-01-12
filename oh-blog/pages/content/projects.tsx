@@ -195,21 +195,70 @@ const ChromeExtensionGroup = ({ extensions }: { extensions: ExtensionProjectProp
 export default function Projects() {
   const regularProjects = [
     {
+      title: "Coffeebyme",
+      description: [
+        "Built a RAG-based coffee platform with Spring Boot and Batch, helping users discover Korean specialty coffee.",
+        "Architected cost-optimized infrastructure on AWS (EC2, RDS, Bedrock) supporting 50+ concurrent users on a $30/month budget through strategic use of Docker, Nginx reverse proxy, Cloudflare, and environment separation.",
+        "Built a complete CI/CD pipeline using GitHub Actions, reducing deployment time by 83% (30min → 5min)."
+      ],
+      demoLink: "https://coffeebyme.com",
+      technologies: ["Java", "Spring Boot", "Spring Batch", "AWS EC2", "AWS RDS", "AWS Bedrock", "Docker", "Nginx", "Cloudflare", "GitHub Actions"]
+    },
+    {
+      title: "Test Automation Tool",
+      description: [
+        "Developed automated testing tool that queries multiple AI services (ChatGPT 3.5, Claude, ChatGPT 4) simultaneously and collects responses.",
+        "Implemented hierarchical context management using Context Tree and Input Tree structures for consistent AI prompting.",
+        "Built comprehensive output classification system that categorizes AI responses as Valid/Invalid with detailed analytics and response tracking."
+      ],
+      demoLink: "https://www.youtube.com/watch?v=JZXYpMRs_uE",
+      technologies: ["Python", "OpenAI API", "Anthropic API", "JSON"]
+    },
+    {
+      title: "AI Chat-Based Game",
+      description: [
+        "Building narrative-driven game using Godot with LLM integration as Senior Capstone Project.",
+        "Designing a dynamic NPC dialogue system with branching storylines for seamless conversational gameplay.",
+        "Managing AI response latency and state management with real-time LLM API integration."
+      ],
+      technologies: ["Godot", "Python", "LLM APIs", "MongoDB"]
+    },
+    {
+      title: "IBM SkillsBuild AI lab",
+      description: [
+        "Led a 3-person team developing NBA Hub, an AI-powered fan and NBA information platform using Python FastAPI.",
+        "Won 1st place for AI in Sports Project among 300+ teams using IBM Watsonx Granite models, earning 5 IBM certifications (Critical Thinking, Prompt Engineering, Generative AI, AI Agents, Code Generation and Optimization)."
+      ],
+      demoLink: "https://youtu.be/GOdMPxPy90w",
+      technologies: ["Python", "FastAPI", "IBM Watsonx", "AI/ML"]
+    },
+    {
+      title: "AI Health Checker",
+      description: [
+        "Built an automated medication reminder system for elderly users during AWS MCP & A2A Hackathon.",
+        "Integrated VAPI.ai voice interface for voice-based assistance with Claude AI for natural language processing.",
+        "Automated SMS notifications using Twilio for comprehensive health monitoring."
+      ],
+      technologies: ["Python", "Flask", "VAPI.ai", "Claude AI", "Twilio"]
+    },
+    {
+      title: "MediTrek",
+      description: [
+        "Developed MediTrek, an AI medication recommendation platform serving 100K+ pharmacies with 80% accuracy.",
+        "Won 1st Place for Use of Perplexity/Sonar at HackHayward and placed Top 10 at SpartUp x SVSBDC Pitch Jam.",
+        "Reduced LLM API usage by 30% and improved response times to under 1s with a caching system implementation."
+      ],
+      demoLink: "https://meditrek.vercel.app/",
+      codeLink: "https://github.com/driffe/Medication-Recommend",
+      technologies: ["Python", "FastAPI", "JavaScript", "HTML/CSS", "Perplexity AI API", "Google Places API", "Vercel"]
+    },
+    {
       title: "Autowise",
       description: [
         "Built AI-powered car maintenance app, winning 5th award at the 'SpartUp' Hackathon within 4hours.",
       ],
-      demoLink: "https://visionary-squirrel-309b11.netlify.app//", 
-      technologies: [ "NextJS", "Typescript", "JavaScript", "HTML/CSS", "Perplexity AI API", "Mapbox API", "Netlify"]
-    },
-    {
-      title: "Meditrek",
-      description: [
-        "Built Medicine recommendation Web App based on user's information, winning the 'Best Use of Perplexity/Sonar' award at the 'Build with AI: HackHayward' Hackathon.",
-      ],
-      demoLink: "https://meditrek.vercel.app/", 
-      codeLink: "https://github.com/driffe/Medication-Recommend",
-      technologies: [ "Python", "FastAPI", "JavaScript", "HTML/CSS", "Perplexity AI API", "Google Places API", "Vercel"]
+      demoLink: "https://visionary-squirrel-309b11.netlify.app//",
+      technologies: ["NextJS", "Typescript", "JavaScript", "HTML/CSS", "Perplexity AI API", "Mapbox API", "Netlify"]
     },
     {
       title: "Event Management System",
@@ -315,6 +364,12 @@ export default function Projects() {
           <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
           <ul className="space-y-4 list-disc ml-6">
             <li className="pl-2">
+              <span className="font-semibold">1st Place AI in Sports Project</span> – IBM SkillsBuild AI Lab (among 300+ teams)
+            </li>
+            <li className="pl-2">
+              <span className="font-semibold">5 IBM Certifications</span> – Critical Thinking, Prompt Engineering, Generative AI, AI Agents, Code Generation and Optimization
+            </li>
+            <li className="pl-2">
               <span className="font-semibold">Certificate Of Achievement</span> – SpartUp Hackathon 2025
             </li>
             <li className="pl-2">
@@ -322,9 +377,6 @@ export default function Projects() {
             </li>
             <li className="pl-2">
               <span className="font-semibold">Best Use of Perplexity / Sonar</span> – HackHayward Hackathon 2025
-            </li>
-            <li className="pl-2">
-              <span className="font-semibold">III Corps Commanding General's Commendation</span> – ROK-U.S. Joint Military Exercise Freedom Shield 2024
             </li>
           </ul>
         </div>
