@@ -34,7 +34,7 @@ export default function About() {
               with a passion for building innovative solutions and continuous learning.
             </p>
             <p className="text-lg">
-              Expected to graduate in December 2025, I'm focusing on developing my skills in
+              Graduated in December 2025, I'm focusing on developing my skills in
               full-stack development, data analysis, HW/SW solution, and Information Technology.
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-6">Education</h2>
           <div className="mb-4">
             <h3 className="text-xl font-semibold">Software Engineering (B.S.)</h3>
-            <p className="text-lg font-medium">San Jose State University - Expected Dec 2025</p>
+            <p className="text-lg font-medium">San Jose State University (Aug 2021 - Dec 2025)</p>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">Relevant Coursework</h3>
@@ -72,7 +72,7 @@ export default function About() {
               <h3 className="font-semibold text-xl mb-4">Resume Focused on SW</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/SeyoungOh(Back)_Resume.pdf"
+                  href="/SeyoungOh_Resume.pdf"
                   download
                   className="button-winona button-winona-download inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
                   data-text="Download Resume"
@@ -85,7 +85,7 @@ export default function About() {
                   </span>
                 </a>
                 <a
-                  href="/SeyoungOh(Back)_Resume.pdf"
+                  href="/SeyoungOh_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button-winona button-winona-view inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
@@ -106,7 +106,7 @@ export default function About() {
               <h3 className="font-semibold text-xl mb-4">Resume Focused on Experiences</h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/SeyoungOh(Tech)_Resume.pdf"
+                  href="/SeyoungOh(A)_Resume.pdf"
                   download
                   className="button-winona button-winona-download inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
                   data-text="Download Resume"
@@ -119,7 +119,7 @@ export default function About() {
                   </span>
                 </a>
                 <a
-                  href="/SeyoungOh(Tech)_Resume.pdf"
+                  href="/SeyoungOh(A)_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button-winona button-winona-view inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-center"
