@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { Kalam } from 'next/font/google';
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-
-const kalam = Kalam({
-  subsets: ["latin"],
-  weight: ["400", "700"], 
-});
 
 interface ProjectProps {
   title: string;
@@ -26,20 +19,18 @@ interface ExtensionProjectProps {
 
 const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: ProjectProps) => {
   return (
-    <div className="project-card bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative boxes transition-all duration-300">
+    <div className="project-card p-4 sm:p-6 mb-6">
       <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-center sm:text-left">{title}</h3>
 
       <div className="flex flex-wrap justify-center sm:justify-start gap-1 sm:gap-2 mb-3 sm:mb-4">
         {technologies.map((tech, index) => (
-          <span key={index} className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
-            {tech}
-          </span>
+          <span key={index} className="tag">{tech}</span>
         ))}
       </div>
 
       <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base mb-4 sm:mb-6">
         {description.map((point, index) => (
-          <li key={index} className="text-gray-700 pb-1 break-words">{point}</li>
+          <li key={index} className="pb-1 break-words" style={{ color: 'var(--ink-soft)' }}>{point}</li>
         ))}
       </ul>
 
@@ -79,20 +70,21 @@ const ProjectCard = ({ title, description, demoLink, codeLink, technologies }: P
 
 const ExtensionProjectCard = ({ title, description, demoLink, codeLink, technologies }: ExtensionProjectProps) => {
   return (
-    <div className="bg-gray-50 rounded-lg shadow-md p-4 mb-4 ml-4">
+    <div
+      className="rounded-xl p-4 mb-4 ml-2 sm:ml-4"
+      style={{ background: 'var(--surface)', border: '1px solid oklch(0.92 0.03 var(--hue))', boxShadow: 'var(--shadow-neutral)' }}
+    >
       <h4 className="text-md sm:text-lg font-semibold mb-2">{title}</h4>
 
       <div className="flex flex-wrap gap-1 mb-2">
         {technologies.filter(tech => tech !== "Google Extension App").map((tech, index) => (
-          <span key={index} className="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">
-            {tech}
-          </span>
+          <span key={index} className="tag">{tech}</span>
         ))}
       </div>
 
       <ul className="list-disc pl-4 space-y-1 text-sm mb-3">
         {description.map((point, index) => (
-          <li key={index} className="text-gray-600">{point}</li>
+          <li key={index} style={{ color: 'var(--ink-soft)' }}>{point}</li>
         ))}
       </ul>
 
@@ -134,22 +126,16 @@ const ChromeExtensionGroup = ({ extensions }: { extensions: ExtensionProjectProp
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="project-card bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8 relative boxes transition-all duration-300">
+    <div className="project-card p-4 sm:p-6 mb-6">
       <div>
         <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Chrome Extension Suite</h3>
         <div className="flex flex-wrap gap-1 sm:gap-2 mb-3">
-          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
-            JavaScript
-          </span>
-          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
-            HTML/CSS
-          </span>
-          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
-            Chrome Extensions
-          </span>
+          <span className="tag">JavaScript</span>
+          <span className="tag">HTML/CSS</span>
+          <span className="tag">Chrome Extensions</span>
         </div>
-        <p className="text-gray-700 text-sm sm:text-base mb-4">
-          A collection of {extensions.length} Chrome extensions with 25+ downloading.
+        <p className="text-sm sm:text-base mb-4" style={{ color: 'var(--ink-soft)' }}>
+          A collection of {extensions.length} Chrome extensions with 25+ downloads.
         </p>
 
         <button
@@ -195,14 +181,15 @@ const ChromeExtensionGroup = ({ extensions }: { extensions: ExtensionProjectProp
 export default function Projects() {
   const regularProjects = [
     {
-      title: "Coffeebyme",
+      title: "CoffeeByMe",
       description: [
-        "Built a RAG-based coffee platform with Spring Boot and Batch, helping users discover Korean specialty coffee.",
-        "Architected cost-optimized infrastructure on AWS (EC2, RDS, Bedrock) supporting 50+ concurrent users on a $30/month budget through strategic use of Docker, Nginx reverse proxy, Cloudflare, and environment separation.",
-        "Built a complete CI/CD pipeline using GitHub Actions, reducing deployment time by 83% (30min → 5min)."
+        "Designed, built, and shipped a live AI-powered Korean coffee discovery service (US + KR markets) end-to-end as the solo developer — reaching 1.5k+ search impressions in the first 30 days post-launch.",
+        "Built a RAG pipeline on AWS Bedrock (Claude Haiku 4.5) with Amazon Titan embeddings, plus a Python web-scraping + LLM extraction pipeline that turns unstructured roaster catalogs into clean, searchable records.",
+        "Architected cost-optimized infrastructure on AWS (EC2, RDS, Bedrock) supporting 50+ concurrent users on a $30/month budget via Docker, Nginx reverse proxy, Cloudflare, and environment separation.",
+        "Built a complete CI/CD pipeline with GitHub Actions, reducing deployment time by 83% (30min → 5min)."
       ],
       demoLink: "https://coffeebyme.com",
-      technologies: ["Java", "Spring Boot", "Spring Batch", "AWS EC2", "AWS RDS", "AWS Bedrock", "Docker", "Nginx", "Cloudflare", "GitHub Actions"]
+      technologies: ["Java", "Spring Boot", "AWS Bedrock", "Claude Haiku 4.5", "Titan Embeddings", "AWS EC2", "AWS RDS", "Docker", "Nginx", "GitHub Actions"]
     },
     {
       title: "Test Automation Tool",
@@ -319,24 +306,17 @@ export default function Projects() {
   ];
 
   return (
-    <main className={`${kalam.className} min-h-screen p-6 back`}>
-      {/* Navigation back to home */}
-      <div className="mb-6">
-        <Link href="/" className="text-blue-600 hover:text-blue-800 flex items-center gap-2">
-          <span>← Back to Home</span>
-        </Link>
-      </div>
-
+    <main className="min-h-screen back">
       {/* Header */}
       <header className="mb-10 text-center">
-        <h1 className="text-5xl font-bold">Projects</h1>
-        <p className="mt-4 text-xl">A showcase of my recent work</p>
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Projects</h1>
+        <p className="mt-3 text-lg" style={{ color: 'var(--ink-soft)' }}>A showcase of my recent work</p>
       </header>
 
       <div className="max-w-4xl mx-auto">
         {/* Featured Projects */}
-        <div className="bg-purple-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
+        <div className="project boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Featured Projects</h2>
 
           {/* Regular Projects */}
           {regularProjects.map((project, index) => (
@@ -355,13 +335,8 @@ export default function Projects() {
         </div>
 
         {/* Awards and Recognition */}
-        <div className="rounded-3xl p-8 mb-8 shadow-xl" style={{
-          background: 'linear-gradient(135deg, rgb(191, 219, 254) 0%, rgb(147, 197, 253) 100%)',
-          position: 'relative',
-          boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 5px 15px -3px rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.3)',
-          border: '1px solid rgba(255, 255, 255, 0.2)'
-        }}>
-          <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
+        <div className="contact boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Awards &amp; Recognition</h2>
           <ul className="space-y-4 list-disc ml-6">
             <li className="pl-2">
               <span className="font-semibold">1st Place AI in Sports Project</span> – IBM SkillsBuild AI Lab (among 300+ teams)
@@ -383,48 +358,20 @@ export default function Projects() {
 
         {/* GitHub Link */}
         <div className="text-center mt-10">
-          <p className="text-xl mb-4">Explore more of my projects on GitHub</p>
+          <p className="text-xl mb-4" style={{ color: 'var(--ink-soft)' }}>Explore more of my projects on GitHub</p>
           <a
             href="https://github.com/driffe"
             target="_blank"
             rel="noopener noreferrer"
             className="button-winona button-winona-github inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium"
             data-text="Visit My GitHub Profile"
+            aria-label="Visit my GitHub profile"
           >
             <span className="inline-flex items-center gap-2">
-              <FaGithub size={20} />
+              <FaGithub size={20} aria-hidden />
               Visit My GitHub Profile
             </span>
           </a>
-        </div>
-
-        {/* Navigation to Other Sections */}
-        <div className="navigation-section mt-12 flex flex-wrap justify-center gap-4">
-            <Link href="/content/about">
-                <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                  About Me
-                </button>
-            </Link>
-            <Link href="/content/skills">
-            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
-              Skills
-            </button>
-          </Link>
-          <Link href="/content/experiences">
-            <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
-              Experiences
-            </button>
-          </Link>
-          <Link href="/content/playground">
-            <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-              Playground
-            </button>
-          </Link>
-          <Link href="/content/contact">
-            <button className="contact px-6 py-3 rounded-full font-bold shadow-md">
-              Contact Me
-            </button>
-          </Link>
         </div>
       </div>
     </main>

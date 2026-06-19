@@ -1,12 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { Kalam } from 'next/font/google';
-import { FaBasketballBall, FaSwimmer, FaBowlingBall, FaCamera, FaKeyboard, FaTrophy } from 'react-icons/fa';
-
-const kalam = Kalam({
-  subsets: ["latin"],
-  weight: ["400", "700"], 
-});
+import { FaBowlingBall, FaCamera, FaKeyboard, FaTrophy } from 'react-icons/fa';
 
 interface HobbyCardProps {
   icon: React.ReactNode;
@@ -16,10 +9,10 @@ interface HobbyCardProps {
 
 const HobbyCard = ({ icon, title, description }: HobbyCardProps) => {
   return (
-    <div className="hobby-card bg-color rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-all duration-300">
-      <div className="text-5xl mb-4">{icon}</div>
+    <div className="hobby-card bg-color rounded-xl p-6 flex flex-col items-center text-center">
+      <div className="text-5xl mb-4" aria-hidden>{icon}</div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-700">{description}</p>
+      <p style={{ color: 'var(--ink-soft)' }}>{description}</p>
     </div>
   );
 };
@@ -31,14 +24,14 @@ interface AwardCardProps {
 
 const AwardCard = ({ title, year }: AwardCardProps) => {
   return (
-    <div className="award-card bg-color rounded-xl shadow-lg p-6 flex items-start gap-4 transition-all duration-300">
-      <div className="text-3xl text-yellow-500 mt-1">
+    <div className="award-card bg-color rounded-xl p-6 flex items-start gap-4">
+      <div className="text-3xl mt-1" style={{ color: 'oklch(0.62 0.17 85)' }} aria-hidden>
         <FaTrophy />
       </div>
       <div className="flex-1">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1">
           <h3 className="text-xl font-bold mb-1 sm:mb-0">{title}</h3>
-          <span className="text-gray-600 text-sm bg-gray-100 px-3 py-1 rounded-full">{year}</span>
+          <span className="text-sm px-3 py-1 rounded-full" style={{ color: 'oklch(0.42 0.12 85)', background: 'oklch(0.95 0.045 85)' }}>{year}</span>
         </div>
       </div>
     </div>
@@ -48,17 +41,17 @@ const AwardCard = ({ title, year }: AwardCardProps) => {
 export default function Playground() {
   const hobbies = [
     {
-      icon: <FaBowlingBall className="text-blue-600" />,
+      icon: <FaBowlingBall style={{ color: 'oklch(0.55 0.16 240)' }} />,
       title: "Bowling",
       description: "Bowling is one of my favorite weekend activities. I enjoy the precision and focus it requires."
     },
     {
-      icon: <FaKeyboard className="text-gray-700" />,
+      icon: <FaKeyboard style={{ color: 'oklch(0.55 0.16 295)' }} />,
       title: "Custom Keyboards",
       description: "I build custom mechanical keyboards, experimenting with different switches, keycaps, and layouts to create the perfect typing experience."
     },
     {
-      icon: <FaCamera className="text-gray-800" />,
+      icon: <FaCamera style={{ color: 'oklch(0.55 0.16 25)' }} />,
       title: "Photography",
       description: "I love capturing moments through photography, especially landscapes and street photography."
     }
@@ -81,24 +74,17 @@ export default function Playground() {
   ];
 
   return (
-    <main className={`${kalam.className} min-h-screen p-6 back`}>
-      {/* Navigation back to home */}
-      <div className="mb-6">
-        <Link href="/" className="text-blue-600 hover:text-blue-800 flex items-center gap-2">
-          <span>← Back to Home</span>
-        </Link>
-      </div>
-
+    <main className="min-h-screen back">
       {/* Header */}
       <header className="mb-10 text-center">
-        <h1 className="text-5xl font-bold">Playground</h1>
-        <p className="mt-4 text-xl">Explore my interests and activities outside of tech</p>
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Playground</h1>
+        <p className="mt-3 text-lg" style={{ color: 'var(--ink-soft)' }}>Life outside the terminal</p>
       </header>
 
       <div className="max-w-4xl mx-auto">
         {/* Hobbies Section */}
-        <div className="bg-red-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Hobbies & Interests</h2>
+        <div className="playground boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Hobbies &amp; Interests</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hobbies.map((hobby, index) => (
               <HobbyCard
@@ -130,8 +116,8 @@ export default function Playground() {
 
 
         {/* Awards Section */}
-        <div className="bg-yellow-200 rounded-3xl p-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Awards & Achievements</h2>
+        <div className="about-me boxes boxes-opaque p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Awards &amp; Achievements</h2>
           <div className="space-y-4">
             {awards.map((award, index) => (
               <AwardCard
@@ -141,35 +127,6 @@ export default function Playground() {
               />
             ))}
           </div>
-        </div>
-
-        {/* Navigation to Other Sections */}
-        <div className="navigation-section mt-12 flex flex-wrap justify-center gap-4">
-            <Link href="/content/about">
-                <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                  About Me
-                </button>
-            </Link>
-            <Link href="/content/skills">
-            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
-              Skills
-            </button>
-          </Link>
-          <Link href="/content/experiences">
-            <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
-              Experiences
-            </button>
-          </Link>
-          <Link href="/content/projects">
-            <button className="btn-project px-6 py-3 rounded-full font-bold shadow-md">
-              Projects
-            </button>
-          </Link>
-          <Link href="/content/contact">
-            <button className="contact px-6 py-3 rounded-full font-bold shadow-md">
-              Contact Me
-            </button>
-          </Link>
         </div>
       </div>
     </main>
