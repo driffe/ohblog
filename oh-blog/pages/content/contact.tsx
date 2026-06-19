@@ -1,31 +1,26 @@
 import React from 'react';
-import Link from 'next/link';
-import { Kalam } from 'next/font/google';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-
-const kalam = Kalam({
-  subsets: ["latin"],
-  weight: ["400", "700"], 
-});
 
 interface ContactItemProps {
   icon: React.ReactNode;
   label: string;
   href: string;
-  color: string;
+  hue: number;
 }
 
-const ContactItem = ({ icon, label, href, color }: ContactItemProps) => {
+const ContactItem = ({ icon, label, href, hue }: ContactItemProps) => {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${color} button-winona contact-item-hover contact-item flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg transition-all duration-300`}
+      className="contact-tile button-winona contact-item-hover flex flex-col items-center justify-center p-8 rounded-2xl shadow-lg"
+      style={{ '--hue': hue } as React.CSSProperties}
       data-text={label}
+      aria-label={label}
     >
       <span className="flex flex-col items-center justify-center">
-        <div className="text-6xl mb-4 text-white">{icon}</div>
+        <div className="text-6xl mb-4 text-white" aria-hidden>{icon}</div>
         <span className="text-xl font-bold text-white">{label}</span>
       </span>
     </a>
@@ -34,43 +29,21 @@ const ContactItem = ({ icon, label, href, color }: ContactItemProps) => {
 
 export default function Contact() {
   const contactItems = [
-    {
-      icon: <FaEnvelope />,
-      label: 'Email',
-      href: 'mailto:syoh2k@gmail.com', 
-      color: 'bg-blue-500 hover:bg-blue-600'
-    },
-    {
-      icon: <FaLinkedin />,
-      label: 'LinkedIn',
-      href: 'https://linkedin.com/in/syoh2k', 
-      color: 'bg-blue-700 hover:bg-blue-800'
-    },
-    {
-      icon: <FaGithub />,
-      label: 'GitHub',
-      href: 'https://github.com/driffe',
-      color: 'bg-gray-800 hover:bg-gray-900'
-    }
+    { icon: <FaEnvelope />, label: 'Email', href: 'mailto:syoh2k@gmail.com', hue: 25 },
+    { icon: <FaLinkedin />, label: 'LinkedIn', href: 'https://linkedin.com/in/syoh2k', hue: 240 },
+    { icon: <FaGithub />, label: 'GitHub', href: 'https://github.com/driffe', hue: 290 },
   ];
 
   return (
-    <main className={`${kalam.className} min-h-screen p-6 back`}>
-      {/* Navigation back to home */}
-      <div className="mb-6">
-        <Link href="/" className="text-blue-600 hover:text-blue-800 flex items-center gap-2">
-          <span>← Back to Home</span>
-        </Link>
-      </div>
-
+    <main className="min-h-screen back">
       {/* Header */}
-      <header className="mb-12 text-center">
-        <h1 className="text-5xl font-bold">Contact Me</h1>
-        <p className="mt-4 text-xl">Get in touch with me through these platforms</p>
+      <header className="mb-10 text-center">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Contact Me</h1>
+        <p className="mt-3 text-lg" style={{ color: 'var(--ink-soft)' }}>Get in touch through these platforms</p>
       </header>
 
       <div className="max-w-4xl mx-auto">
-        <div className="bg-gray-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
+        <div className="contact boxes boxes-opaque p-6 sm:p-8 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactItems.map((item, index) => (
               <ContactItem
@@ -78,50 +51,21 @@ export default function Contact() {
                 icon={item.icon}
                 label={item.label}
                 href={item.href}
-                color={item.color}
+                hue={item.hue}
               />
             ))}
           </div>
         </div>
 
         {/* Quick message */}
-        <div className="bg-blue-200 rounded-3xl p-8 shadow-xl text-center relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-4">Let's Connect!</h2>
-          <p className="text-lg">
-            I'm open to new opportunities and collaborations! Feel free to reach out to discuss potential projects, job opportunities, or simply to connect. I'd love to hear from you!
+        <div className="project boxes boxes-opaque p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Let&apos;s Connect!</h2>
+          <p className="text-lg" style={{ color: 'var(--ink-soft)' }}>
+            I&apos;m open to new opportunities and collaborations! Feel free to reach out to discuss projects, roles, or just to connect &mdash; I&apos;d love to hear from you.
           </p>
-          <p className="text-lg">
-            🎓 Graduating December 2025 | Seeking Full-time Opportunities Starting 2026
+          <p className="text-lg mt-3 font-medium">
+            🎓 Graduated Dec 2025 · Software Engineer @ KQED · Open to New Grad SWE roles (SF Bay Area / Washington D.C.)
           </p>
-        </div>
-
-        {/* Navigation to Other Sections */}
-        <div className="navigation-section mt-12 flex flex-wrap justify-center gap-4">
-            <Link href="/content/about">
-                <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                    About Me
-                </button>
-            </Link>
-            <Link href="/content/skills">
-            <button className="btn-skill px-6 py-3 rounded-full font-bold shadow-md">
-              Skills
-            </button>
-          </Link>  
-          <Link href="/content/experiences">
-            <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
-              Experiences
-            </button>
-          </Link>
-          <Link href="/content/projects">
-            <button className="btn-project px-6 py-3 rounded-full font-bold shadow-md">
-              Projects
-            </button>
-          </Link>
-          <Link href="/content/playground">
-            <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-                Playground
-            </button>
-          </Link>
         </div>
       </div>
     </main>

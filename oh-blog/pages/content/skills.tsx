@@ -1,149 +1,107 @@
 import React from 'react';
-import Link from 'next/link';
-import { Kalam } from 'next/font/google';
-import { FaJava, FaPython, FaHtml5, FaJs, FaPhp, FaDatabase, FaNodeJs, FaGithub, FaAws, FaGoogle, FaDocker  } from 'react-icons/fa';
-import { SiTypescript, SiCplusplus, SiC, SiFirebase, SiMysql, SiReact, SiNextdotjs, SiTailwindcss, SiRacket, SiPandas, SiNumpy, SiFastapi, SiPlotly, SiMongodb, SiGooglecloudcomposer, SiAwslambda, SiSelenium, SiVercel, SiNetlify, SiDart, SiFlutter, SiPostman, SiJira, SiConfluence, SiFigma, SiGoogleanalytics, SiGithubactions, SiCloudflare, SiFlask, SiGodotengine, SiNginx } from 'react-icons/si';
+import { FaJava, FaPython, FaHtml5, FaJs, FaDatabase, FaGithub, FaAws, FaGoogle, FaDocker } from 'react-icons/fa';
+import { SiTypescript, SiCplusplus, SiC, SiFirebase, SiMysql, SiReact, SiNextdotjs, SiTailwindcss, SiPandas, SiNumpy, SiFastapi, SiPlotly, SiMongodb, SiRedis, SiSelenium, SiVercel, SiNetlify, SiDart, SiFlutter, SiPostman, SiJira, SiConfluence, SiFigma, SiGoogleanalytics, SiGithubactions, SiCloudflare, SiFlask, SiGodotengine, SiNginx } from 'react-icons/si';
 import { BiLogoSpringBoot } from "react-icons/bi";
-import { FaWebflow } from 'react-icons/fa6';
-
-const kalam = Kalam({
-  subsets: ["latin"],
-  weight: ["400", "700"], 
-});
 
 interface SkillIconProps {
     icon: React.ReactNode;
     name: string;
-    color?: string;
 }
 
-const SkillIcon = ({ icon, name, color }: SkillIconProps) => {
+const SkillIcon = ({ icon, name }: SkillIconProps) => {
     return (
-        <div className="skill-icon bg-white rounded-xl shadow p-6 flex flex-col items-center justify-center transition-all duration-300" data-color={color}>
-        <div className="text-4xl mb-3">{icon}</div>
-        <h3 className="font-semibold">{name}</h3>
+        <div className="skill-icon bg-color rounded-xl p-6 flex flex-col items-center justify-center text-center" style={{ boxShadow: 'var(--shadow-neutral)' }}>
+        <div className="skill-glyph text-4xl mb-3" aria-hidden>{icon}</div>
+        <h3 className="font-semibold text-sm sm:text-base">{name}</h3>
         </div>
     );
 };
 
 export default function Skills() {
   return (
-    <main className={`${kalam.className} min-h-screen p-6 back`}>
-      {/* Navigation back to home */}
-      <div className="mb-6">
-        <Link href="/" className="text-blue-600 hover:text-blue-800 flex items-center gap-2">
-          <span>← Back to Home</span>
-        </Link>
-      </div>
-
+    <main className="min-h-screen back">
       {/* Header */}
       <header className="mb-10 text-center">
-        <h1 className="text-5xl font-bold">Skills</h1>
-        <p className="mt-4 text-xl">Technologies and tools I work with</p>
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">Skills</h1>
+        <p className="mt-3 text-lg" style={{ color: 'var(--ink-soft)' }}>Technologies and tools I work with</p>
       </header>
 
       <div className="max-w-4xl mx-auto">
         {/* Programming Languages */}
-        <div className="bg-green-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Programming Languages</h2>
+        <div className="skill boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Programming Languages</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<FaJava />} name="Java" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<SiCplusplus />} name="C++" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<SiC />} name="C" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<FaPython />} name="Python" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<FaJs />} name="JavaScript" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<SiTypescript />} name="TypeScript" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<FaDatabase />} name="SQL" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<SiDart />} name="Dart" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<FaHtml5 />} name="HTML/CSS" color="rgb(153, 188, 133)" />
-            <SkillIcon icon={<SiTailwindcss />} name="TailwindCSS" color="rgb(153, 188, 133)" />
+            <SkillIcon icon={<FaJava />} name="Java" />
+            <SkillIcon icon={<SiCplusplus />} name="C++" />
+            <SkillIcon icon={<SiC />} name="C" />
+            <SkillIcon icon={<FaPython />} name="Python" />
+            <SkillIcon icon={<FaJs />} name="JavaScript" />
+            <SkillIcon icon={<SiTypescript />} name="TypeScript" />
+            <SkillIcon icon={<FaDatabase />} name="SQL" />
+            <SkillIcon icon={<SiDart />} name="Dart" />
+            <SkillIcon icon={<FaHtml5 />} name="HTML/CSS" />
+            <SkillIcon icon={<SiTailwindcss />} name="TailwindCSS" />
           </div>
         </div>
 
         {/*Frameworks */}
-        <div className="bg-blue-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Frameworks & Libraries</h2>
+        <div className="contact boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Frameworks &amp; Libraries</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiFastapi />} name="FastAPI" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiFlask />} name="Flask" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiNextdotjs />} name="Next.js" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiReact />} name="ReactJS" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiFlutter />} name="Flutter" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiGodotengine />} name="Godot" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiPlotly />} name="Plotly" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiPandas />} name="Pandas" color="rgb(191, 219, 254)" />
-            <SkillIcon icon={<SiNumpy />} name="NumPy" color="rgb(191, 219, 254)" />
+            <SkillIcon icon={<BiLogoSpringBoot />} name="Spring Boot" />
+            <SkillIcon icon={<BiLogoSpringBoot />} name="Spring WebFlux" />
+            <SkillIcon icon={<SiFastapi />} name="FastAPI" />
+            <SkillIcon icon={<SiFlask />} name="Flask" />
+            <SkillIcon icon={<SiNextdotjs />} name="Next.js" />
+            <SkillIcon icon={<SiReact />} name="ReactJS" />
+            <SkillIcon icon={<SiFlutter />} name="Flutter" />
+            <SkillIcon icon={<SiGodotengine />} name="Godot" />
+            <SkillIcon icon={<SiPlotly />} name="Plotly" />
+            <SkillIcon icon={<SiPandas />} name="Pandas" />
+            <SkillIcon icon={<SiNumpy />} name="NumPy" />
           </div>
         </div>
 
         {/*Databases */}
-        <div className="bg-orange-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Databases</h2>
+        <div className="experience boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Databases</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<SiMysql />} name="MySQL" color="rgb(246, 158, 123)" />
-            <SkillIcon icon={<SiMongodb />} name="MongoDB" color="rgb(246, 158, 123)" />
-            <SkillIcon icon={<SiFirebase />} name="Firebase" color="rgb(246, 158, 123)" />
+            <SkillIcon icon={<SiMysql />} name="MySQL" />
+            <SkillIcon icon={<SiMongodb />} name="MongoDB" />
+            <SkillIcon icon={<SiRedis />} name="Redis" />
+            <SkillIcon icon={<SiFirebase />} name="Firebase" />
           </div>
         </div>
 
         {/* Tools */}
-        <div className="bg-purple-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Tools</h2>
+        <div className="project boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Tools</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<FaGithub />} name="Git" color="rgb(233, 213, 255)" />
-            <SkillIcon icon={<SiPostman />} name="Postman" color="rgb(233, 213, 255)" />
-            <SkillIcon icon={<SiJira />} name="Jira" color="rgb(233, 213, 255)" />
-            <SkillIcon icon={<SiConfluence />} name="Confluence" color="rgb(233, 213, 255)" />
-            <SkillIcon icon={<SiFigma />} name="Figma" color="rgb(233, 213, 255)" />
-            <SkillIcon icon={<SiGoogleanalytics />} name="GA4" color="rgb(233, 213, 255)" />
-            <SkillIcon icon={<SiSelenium />} name="Selenium" color="rgb(233, 213, 255)" />
+            <SkillIcon icon={<FaGithub />} name="Git" />
+            <SkillIcon icon={<SiPostman />} name="Postman" />
+            <SkillIcon icon={<SiJira />} name="Jira" />
+            <SkillIcon icon={<SiConfluence />} name="Confluence" />
+            <SkillIcon icon={<SiFigma />} name="Figma" />
+            <SkillIcon icon={<SiGoogleanalytics />} name="GA4" />
+            <SkillIcon icon={<SiSelenium />} name="Selenium" />
           </div>
         </div>
 
         {/* Deployments */}
-        <div className="bg-yellow-200 rounded-3xl p-8 mb-8 shadow-xl relative boxes boxes-opaque">
-          <h2 className="text-3xl font-bold mb-6">Deployments</h2>
+        <div className="about-me boxes boxes-opaque p-6 sm:p-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Cloud &amp; DevOps</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <SkillIcon icon={<FaDocker />} name="Docker" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<SiGithubactions />} name="GitHub Actions" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<SiNginx />} name="Nginx" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<FaGoogle />} name="GCP" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<FaAws />} name="AWS" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<SiCloudflare />} name="Cloudflare" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<SiVercel />} name="Vercel" color="rgb(254, 240, 138)" />
-            <SkillIcon icon={<SiNetlify />} name="Netlify" color="rgb(254, 240, 138)" />
+            <SkillIcon icon={<FaDocker />} name="Docker" />
+            <SkillIcon icon={<SiGithubactions />} name="GitHub Actions" />
+            <SkillIcon icon={<SiNginx />} name="Nginx" />
+            <SkillIcon icon={<FaGoogle />} name="GCP" />
+            <SkillIcon icon={<FaAws />} name="AWS" />
+            <SkillIcon icon={<SiCloudflare />} name="Cloudflare" />
+            <SkillIcon icon={<SiVercel />} name="Vercel" />
+            <SkillIcon icon={<SiNetlify />} name="Netlify" />
           </div>
         </div>
 
-        {/* Navigation to Other Sections */}
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link href="/content/about">
-                <button className="btn-about px-6 py-3 rounded-full font-bold shadow-md">
-                  About Me
-                </button>
-            </Link>
-          <Link href="/content/experiences">
-            <button className="btn-experience px-6 py-3 rounded-full font-bold shadow-md">
-              Experiences
-            </button>
-          </Link>
-          <Link href="/content/projects">
-            <button className="btn-project px-6 py-3 rounded-full font-bold shadow-md">
-              Projects
-            </button>
-          </Link>
-          <Link href="/content/playground">
-            <button className="btn-playground px-6 py-3 rounded-full font-bold shadow-md">
-              Playground
-            </button>
-          </Link>
-          <Link href="/content/contact">
-            <button className="contact px-6 py-3 rounded-full font-bold shadow-md">
-              Contact Me
-            </button>
-          </Link>
-        </div>
       </div>
     </main>
   );
