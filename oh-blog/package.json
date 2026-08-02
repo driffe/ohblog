@@ -6,22 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-assets": "node scripts/import-assets.mjs",
+    "make-pilm-thumb": "node scripts/make-pilm-thumb.mjs"
   },
   "dependencies": {
-    "next": "^14.2.24",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^5.5.0"
+    "next": "^15.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "20.17.24",
-    "@types/react": "18.3.18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "5.8.2",
-    "windicss": "^3.5.6"
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.0.0",
+    "typescript": "5.8.2"
   }
 }
