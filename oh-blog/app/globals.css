@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Editorial Mono — design tokens
+   Warm paper, near-black ink, hairline rules. No shadows, no
+   radius. Tailwind 4 CSS-first @theme wires these into utilities
+   (bg-paper, text-ink, border-rule, text-accent, ...).
+   ============================================================ */
+@theme {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+
+  --font-display: var(--font-instrument-serif), "Times New Roman", serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-meta: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --radius-none: 0px;
+}
+
+:root {
+  --paper: #fcfaf7;
+  --paper-2: #f4f0e9;
+  --ink: #16130f;
+  --ink-muted: #6b6259;
+  --rule: #e3ded5;
+  --accent: #c24e1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0e0d0b;
+    --paper-2: #171512;
+    --ink: #ede8e0;
+    --ink-muted: #9a9187;
+    --rule: #2a2621;
+    --accent: #e2703a;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #0e0d0b;
+  --paper-2: #171512;
+  --ink: #ede8e0;
+  --ink-muted: #9a9187;
+  --rule: #2a2621;
+  --accent: #e2703a;
+}
+
+:root[data-theme="light"] {
+  --paper: #fcfaf7;
+  --paper-2: #f4f0e9;
+  --ink: #16130f;
+  --ink-muted: #6b6259;
+  --rule: #e3ded5;
+  --accent: #c24e1a;
+}
+
+/* ============================================================
+   Base — hairlines, zero radius, zero shadow, everywhere.
+   ============================================================ */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+a {
+  color: inherit;
+}
+
+/* ============================================================
+   Primitives
+   ============================================================ */
+.rule {
+  border-color: var(--rule);
+}
+
+.rule-t {
+  border-top: 1px solid var(--rule);
+}
+
+.rule-b {
+  border-bottom: 1px solid var(--rule);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  font-size: clamp(2.75rem, 9vw, 7.5rem);
+}
+
+.meta {
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+:not(pre) > code {
+  font-family: var(--font-meta);
+  font-size: 0.875em;
+  padding: 0.1em 0.35em;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.eyebrow {
+  font-family: var(--font-meta);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.section {
+  padding-top: clamp(4rem, 10vw, 9rem);
+  padding-bottom: clamp(4rem, 10vw, 9rem);
+}
+
+.wrap {
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Numbered hairline index row (work index, roles list) */
+.index-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding-block: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.index-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 640px) {
+  a.index-row:hover,
+  a.index-row:focus-visible {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  a.index-row:hover .index-row-arrow,
+  a.index-row:focus-visible .index-row-arrow {
+    transform: translateX(6px);
+  }
+
+  a.index-row:hover .meta,
+  a.index-row:focus-visible .meta {
+    color: var(--paper);
+    opacity: 0.7;
+  }
+}
+
+.index-row-arrow {
+  transition: transform 0.2s ease;
+}
+
+/* ============================================================
+   Reveal-on-scroll — gated by prefers-reduced-motion in JS too,
+   but the CSS fallback stays inert either way.
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Cursor-following thumbnail preview (desktop pointer only)
+   ============================================================ */
+.hover-thumb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18rem;
+  height: 12rem;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  transition: opacity 0.2s ease;
+}
+
+.hover-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hover-thumb-visible {
+  opacity: 1;
+}
+
+/* ============================================================
+   Old-site continuity — faint paper texture, opt-in only
+   ============================================================ */
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::before {
+  content: "";
+  position: fixed;
+  right: -6rem;
+  bottom: -6rem;
+  width: 34rem;
+  height: 34rem;
+  background-image: url("/panji-jilgam.jpg");
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  filter: saturate(0.7) contrast(1.05);
+}
