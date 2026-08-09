@@ -16,6 +16,7 @@
 
   --font-display: var(--font-instrument-serif), "Times New Roman", serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body-kr: var(--font-noto-sans-kr), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-meta: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
 
   --radius-none: 0px;
@@ -87,6 +88,11 @@ body {
 ::selection {
   background: var(--accent);
   color: var(--paper);
+}
+
+/* Korean-language blog posts (<article lang="ko"> in app/blog/[slug]/page.tsx). */
+[lang="ko"] {
+  font-family: var(--font-body-kr), var(--font-body);
 }
 
 a {

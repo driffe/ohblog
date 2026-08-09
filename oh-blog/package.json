@@ -3,23 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run build:blog-index && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "prebuild": "npm run build:blog-index",
+    "build:blog-index": "node scripts/build-blog-index.mjs",
     "import-assets": "node scripts/import-assets.mjs",
     "make-pilm-thumb": "node scripts/make-pilm-thumb.mjs"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.4.0",
     "next": "^15.4.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
+    "@types/mdx": "^2.0.13",
     "@types/node": "20.17.24",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "gray-matter": "^4.0.3",
     "postcss": "^8",
     "sharp": "^0.33.5",
     "tailwindcss": "^4.0.0",

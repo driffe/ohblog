@@ -8,6 +8,7 @@ import { CloseIcon, MenuIcon } from "@/components/icons";
 
 const links = [
   { href: "/work", label: "Work" },
+  { href: "/blog", label: "Blog" },
   { href: "/experience", label: "Experience" },
   { href: "/stack", label: "Stack" },
   { href: "/about", label: "About" },

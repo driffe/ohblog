@@ -62,6 +62,38 @@ export interface Award {
   year: string;
 }
 
+/**
+ * Blog post frontmatter topics. Unlike WorkTag, this isn't a closed set tied
+ * to filter-bar UI — /blog has no tag filter in this phase — so it stays a
+ * freeform string rather than a fixed union.
+ */
+export type BlogTag = string;
+
+/**
+ * Blog post metadata, typed 1:1 from the YAML frontmatter of
+ * content/blog/<YYYY-MM-DD>-<slug>.mdx. content/blog/index.ts is generated
+ * from that frontmatter by scripts/build-blog-index.mjs — the .mdx files are
+ * the single source of truth, this interface just types their shape.
+ */
+export interface BlogPost {
+  slug: string;
+  title: string;
+  summary: string;
+  /** ISO date (YYYY-MM-DD) matching the file's date prefix. */
+  date: string;
+  /** ISO date (YYYY-MM-DD); used as sitemap lastModified. */
+  updated: string;
+  lang: "en" | "ko";
+  tags: BlogTag[];
+  /** Optional slug of a related /work/<slug> case study. */
+  project?: string;
+  readingMinutes: number;
+  /** Excluded from the index, sitemap, and generateStaticParams when true. */
+  draft: boolean;
+  /** Optional oh-press brief id this post originated from. */
+  brief?: string;
+}
+
 export interface Profile {
   name: string;
   /** First line of the homepage display headline. */
