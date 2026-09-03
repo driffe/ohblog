@@ -16,6 +16,7 @@ export const stack: StackCategory[] = [
       "GDScript",
       "HTML/CSS",
       "TailwindCSS",
+      "Bash",
     ],
   },
   {
@@ -41,6 +42,8 @@ export const stack: StackCategory[] = [
       "Spring Batch",
       "JPA / Hibernate",
       "scikit-learn",
+      "WordPress",
+      "Node.js",
     ],
   },
   {
@@ -54,6 +57,12 @@ export const stack: StackCategory[] = [
       "IBM watsonx",
       "ChromaDB",
       "VAPI.ai",
+      "RAG Pipelines",
+      "Semantic Search",
+      "Vector Embeddings",
+      "Context Engineering",
+      "Eval Design",
+      "Multi-Agent Orchestration",
     ],
   },
   {
@@ -93,6 +102,7 @@ export const stack: StackCategory[] = [
       "Cloudflare R2",
       "Kubernetes",
       "GCP Secret Manager",
+      "Helm",
     ],
   },
 ];

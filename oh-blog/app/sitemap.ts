@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { caseStudySlugs } from "@/content/work";
+import { blogSlugs, getPostBySlug } from "@/content/blog";
 
 const BASE_URL = "https://ohblog-inky.vercel.app";
 
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, lastModified: now, changeFrequency: "monthly", priority: 1 },
     { url: `${BASE_URL}/work`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/experience`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/stack`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
@@ -23,5 +25,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => {
+    const post = getPostBySlug(slug);
+    return {
+      url: `${BASE_URL}/blog/${slug}`,
+      lastModified: post ? new Date(post.updated) : now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    };
+  });
+
+  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes];
 }

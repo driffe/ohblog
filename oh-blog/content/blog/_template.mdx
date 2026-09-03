@@ -1,0 +1,113 @@
+---
+slug: my-post-slug
+title: 글 제목 (한국어 가능)
+summary: One or two sentences. Shown on the /blog index and in OG/meta description.
+date: 2026-01-01
+updated: 2026-01-01
+lang: ko
+tags: [rag, aws]
+project: coffeebyme
+readingMinutes: 8
+draft: true
+brief: B-2026-0000-slug
+---
+
+{/*
+  AUTHORING TEMPLATE — not a post. Files starting with `_` are skipped by
+  scripts/build-blog-index.mjs.
+
+  To write a post:
+    1. Copy this file to content/blog/<YYYY-MM-DD>-<slug>.mdx
+    2. The filename's date and slug MUST match the `date` and `slug` frontmatter.
+       The build script hard-fails otherwise, because app/blog/[slug]/page.tsx
+       reconstructs the source path from those two fields.
+    3. Keep `draft: true` until it is ready. Drafts are excluded from the index,
+       the sitemap, generateStaticParams, and the rendered HTML.
+
+  Frontmatter fields:
+    required — slug, title, summary, date, updated, lang, tags, readingMinutes, draft
+    optional — project, brief
+    lang     — "en" or "ko" only. "ko" switches the article to Noto Sans KR.
+    tags     — non-empty array of strings.
+
+  Rules that are enforced by the site, not by taste:
+    - No raw markdown headings. Use <H2 id="...">, which the <Toc> links to.
+    - No <img>. Images go in public/blog/<slug>/*.webp and render via <Figure>.
+    - No box-shadow, and border-radius is capped at 2px — globals.css enforces
+      both with !important on *, so fighting it silently does nothing.
+    - Components below are injected by the MDX map. Do NOT import anything.
+*/}
+
+export const toc = [
+  { id: "context", label: "배경" },
+  { id: "what-happened", label: "무슨 일이 있었나" },
+  { id: "takeaways", label: "얻은 교훈" },
+];
+
+<div className="xl:grid xl:grid-cols-[minmax(0,1fr)_14rem] xl:gap-16">
+<Prose>
+
+<H2 id="context">배경</H2>
+
+<P>
+  본문 문단. 모든 산문은 &lt;P&gt; 안에 넣는다.
+</P>
+
+{/* 코드 블록: 언어 태그를 붙인 일반 펜스 */}
+
+```text
+before -> after
+```
+
+<H2 id="what-happened">무슨 일이 있었나</H2>
+
+{/* 숫자 4개까지. value는 짧게, label은 무엇을 잰 값인지 */}
+
+<MetricRow
+  metrics={[
+    { value: "-14pt", label: "무엇이 얼마나 변했는지" },
+    { value: "-44%", label: "두 번째 지표" },
+  ]}
+/>
+
+{/* 흐름도. Stack은 세로, Row는 가로, Arrow는 direction="down" */}
+
+<DiagramFrame>
+  <Stack>
+    <Box label="Input" sub="설명" />
+    <Arrow direction="down" />
+    <Row>
+      <Box label="분기 A" sub="설명" />
+      <Box label="분기 B" sub="설명" />
+    </Row>
+  </Stack>
+</DiagramFrame>
+
+{/* 한계나 반론을 스스로 밝히는 자리. 기술 글의 신뢰도는 여기서 나온다 */}
+
+<Callout label="솔직한 한계">
+  이 관찰이 성립하지 않는 조건을 명시한다.
+</Callout>
+
+<MetaTable
+  rows={[
+    { key: "항목", value: "값" },
+  ]}
+/>
+
+<H2 id="takeaways">얻은 교훈</H2>
+
+<UL>
+  <LI>한 줄에 하나씩.</LI>
+</UL>
+
+<LinkList
+  items={[
+    { title: "관련 케이스 스터디", href: "/work/coffeebyme", note: "내부" },
+    { title: "외부 문서", href: "https://example.com", note: "출처" },
+  ]}
+/>
+
+</Prose>
+<Toc entries={toc} />
+</div>

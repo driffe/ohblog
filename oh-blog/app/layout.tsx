@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import { Instrument_Serif, Inter, JetBrains_Mono, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -21,6 +21,17 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+// Korean-language posts (lang: "ko" in blog frontmatter) get this layered in
+// via the [lang="ko"] rule in globals.css. subsets: ["latin"] is deliberate,
+// not a typo: next/font/google's metadata for this family only offers
+// cyrillic/latin/latin-ext/vietnamese subsets (no "korean" option) — the
+// underlying variable font file still carries full Korean glyph coverage.
+const notoSansKR = Noto_Sans_KR({
+  subsets: ["latin"],
+  variable: "--font-noto-sans-kr",
   display: "swap",
 });
 
@@ -81,7 +92,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} font-body antialiased`}
+        className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} ${notoSansKR.variable} font-body antialiased`}
       >
         <a
           href="#main-content"

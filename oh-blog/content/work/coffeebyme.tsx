@@ -352,21 +352,20 @@ boolean locked = lock.tryLock(LOCK_WAIT_SECONDS, TimeUnit.SECONDS);
         <H2 id="results">Measured results</H2>
         <MetricRow
           metrics={[
-            { value: "~500", label: "Monthly active users (GA4)" },
+            { value: "1.1K+", label: "Monthly active users (GA4)" },
             { value: "1,685", label: "US catalog items" },
             { value: "~97", label: "Roasteries scraped" },
             { value: "2.7s", label: "Measured cold cache load" },
           ]}
         />
         <P>
-          The ~500 monthly active users figure is Google Analytics 4, and it&rsquo;s the conservative reading on
+          The 1.1K+ monthly active users figure is Google Analytics 4, and it&rsquo;s the conservative reading on
           purpose. GA4 is a third-party script, so ad blockers and Safari/Brave tracking prevention drop a real
           share of sessions before they&rsquo;re ever counted; Vercel Analytics, which is first-party and
-          therefore rarely blocked, reports closer to 1,200 visitors over the same window. That higher number
-          isn&rsquo;t directly comparable — Vercel identifies visitors with a hash that rotates daily, so someone
-          returning across several days is counted more than once, which makes it closer to a sum of daily
-          uniques than to true monthly actives. The real figure sits between the two. I quote the one I can
-          defend.
+          therefore rarely blocked, reports a higher number over the same window. That higher number isn&rsquo;t
+          directly comparable — Vercel identifies visitors with a hash that rotates daily, so someone returning
+          across several days is counted more than once, which makes it closer to a sum of daily uniques than to
+          true monthly actives. The real figure sits between the two. I quote the one I can defend.
         </P>
         <P>
           The 1,685-item US catalog breaks down as 1,023 single-origin, 539 blend, and 120 capsule (bundled with

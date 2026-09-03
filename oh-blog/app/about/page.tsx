@@ -43,7 +43,7 @@ export default function AboutPage() {
 
         <Reveal className="rule-t rule-b py-10">
           <h2 className="meta mb-6">Résumé</h2>
-          <p className="text-ink-muted mb-6">Two versions, depending on what you&rsquo;re looking for.</p>
+          <p className="text-ink-muted mb-6">Three versions, depending on what you&rsquo;re looking for.</p>
           <div className="flex flex-wrap gap-6">
             <a
               href={profile.resumeSwe}
@@ -52,6 +52,14 @@ export default function AboutPage() {
               className="meta border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors"
             >
               Software Engineering →
+            </a>
+            <a
+              href={profile.resumeStartup}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="meta border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors"
+            >
+              Startup →
             </a>
             <a
               href={profile.resumeIt}
