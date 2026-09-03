@@ -34,8 +34,8 @@ export const profile: Profile = {
   // Four tiles, to fill the md:grid-cols-4 stat band on the homepage. Every
   // number here is from my own projects, not an employer's product metrics.
   stats: [
-    { label: "Pilm App Store downloads", value: "~2,000" },
-    { label: "CoffeeByMe MAU", value: "500+" },
+    { label: "Pilm App Store downloads", value: "3.2K+" },
+    { label: "CoffeeByMe MAU", value: "1.1K+" },
     { label: "Hackathon wins", value: "2×" },
     { label: "Shipped projects", value: "12" },
   ],

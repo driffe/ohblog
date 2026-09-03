@@ -165,7 +165,7 @@ export default function PilmBody() {
             { value: "35", label: "Film presets" },
             { value: "6", label: "Mood categories" },
             { value: "4,509", label: "Lines of code" },
-            { value: "~2,000", label: "App Store downloads" },
+            { value: "3.2K+", label: "App Store downloads" },
           ]}
         />
         <P>
@@ -182,7 +182,9 @@ export default function PilmBody() {
           .
         </P>
         <Callout label="Status">
-          Live on the App Store, with roughly 2,000 downloads so far.
+          Live on the App Store, with 3.2K+ downloads so far. The first month alone brought 2,000+ downloads at a
+          9.15% conversion rate — above the 75th percentile for the Photo &amp; Video category — with 27.78% Day-1
+          retention.
         </Callout>
       </Prose>
       <Toc entries={toc} />

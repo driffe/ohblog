@@ -9,9 +9,9 @@ export const work: WorkItem[] = [
     index: 1,
     title: "CoffeeByMe",
     year: "2026",
-    role: "Solo developer",
+    role: "Solo developer · Technical lead",
     status: "Live",
-    metric: "500+ MAU",
+    metric: "1.1K+ MAU",
     summary:
       "AI-powered coffee discovery platform for the US and Korean markets — built solo, from a Python ingestion pipeline to a production recommendation engine.",
     tags: ["product", "ai"],
@@ -39,7 +39,7 @@ export const work: WorkItem[] = [
     year: "2026",
     role: "Solo developer",
     status: "App Store",
-    metric: "2K+ downloads",
+    metric: "3.2K+ downloads",
     summary:
       "A film-preset iOS camera app that shoots 9:16 and 16:9 simultaneously from one sensor and renders both live — entirely on-device.",
     tags: ["mobile"],
