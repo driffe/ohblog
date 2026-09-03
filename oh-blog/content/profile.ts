@@ -14,6 +14,7 @@ export const profile: Profile = {
   linkedin: "https://linkedin.com/in/syoh2k",
   resumeSwe: "/Seyoung_Oh_Resume.pdf",
   resumeIt: "/Seyoung_Oh_Resume_TSE.pdf",
+  resumeStartup: "/Seyoung_Oh_Resume_Startup.pdf",
   education: {
     degree: "Software Engineering (B.S.)",
     school: "San Jose State University",

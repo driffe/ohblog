@@ -109,6 +109,7 @@ export interface Profile {
   linkedin: string;
   resumeSwe: string;
   resumeIt: string;
+  resumeStartup: string;
   education: {
     degree: string;
     school: string;
